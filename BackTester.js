@@ -1,5 +1,5 @@
 /**
- * Backtester class, used to simulate a trading strategy, and return wallet data and indicators.
+ * Backtest class, used to simulate a trading strategy, and return wallet data and indicators.
  * @param {Array} marketData - Array of market data
  * @param {Object} config - Object of configuration options
  * @param {Number} config.margin - Margin to use for the simulation
@@ -9,8 +9,8 @@
  * @param {Number} wallet.balanceUSD - USD balance + ETH balance * ETH price
  * @returns {Object} - Object of wallet data and indicators
  */
-class Backtester {
-  constructor(marketData, config, wallet) {
+class Backtest {
+  constructor(marketData, config = {}, wallet = {}) {
     this.marketData = marketData;
     this.config = { margin: 0.1, ...config };
     this.wallet = wallet;
@@ -20,6 +20,7 @@ class Backtester {
       openEqHigh: 0,
       openEqLow: 0,
       total: this.marketData.length,
+      survivability: null,
     };
   }
 
@@ -54,8 +55,16 @@ class Backtester {
       // run the next simulation cycle
       this.next(dataPoint);
     }
+    this.indicators.survivability = this.findSurvivability();
     return { wallet: this.wallet, indicators: this.indicators };
+  }
+
+  findSurvivability() {
+    return (
+      (this.indicators.longSurvives + this.indicators.shortSurvives) /
+      (this.indicators.total * 2)
+    );
   }
 }
 
-module.exports = Backtester;
+module.exports = Backtest;

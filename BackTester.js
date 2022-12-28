@@ -6,7 +6,6 @@
  * @param {Object} wallet - Object of wallet data
  * @param {Number} wallet.usd - USD balance
  * @param {Number} wallet.eth - ETH balance
- * @param {Number} wallet.balanceUSD - USD balance + ETH balance * ETH price
  * @returns {Object} - Object of wallet data and indicators
  */
 class Backtest {
@@ -56,6 +55,7 @@ class Backtest {
       this.next(dataPoint);
     }
     this.indicators.survivability = this.findSurvivability();
+    this.wallet.balance = this.calculateBalance();
     return { wallet: this.wallet, indicators: this.indicators };
   }
 
@@ -64,6 +64,10 @@ class Backtest {
       (this.indicators.longSurvives + this.indicators.shortSurvives) /
       (this.indicators.total * 2)
     );
+  }
+
+  calculateBalance() {
+    return this.wallet.usd + this.wallet.eth * this.marketData[0][4];
   }
 }
 

@@ -27,7 +27,6 @@ class Backtest {
     };
     this.squads = [];
 
-    console.log(initialWallet);
     // initialize the wallet
     this.wallet.deposit(
       initialWallet.baseAmount,

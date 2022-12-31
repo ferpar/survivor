@@ -27,7 +27,11 @@ const initialWallet = {
 // })();
 
 (async () => {
-  const backtest = new Backtest(marketData, { margin: 0.05 }, initialWallet);
+  const backtest = new Backtest(
+    marketData,
+    { margin: 0.05, marginStop: 0.05, maginLimit: 0.2 },
+    initialWallet
+  );
   backtest.init();
   const backtestResults = backtest.run();
   console.log(backtestResults);

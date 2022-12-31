@@ -1,7 +1,9 @@
 {
   "marketData": null,
   "config": {
-    "margin": 0.05
+    "margin": 0.05,
+    "marginStop": 0.05,
+    "marginLimit": 0.2
   },
   "wallet": {
     "baseCurrency": "baseCurrency",

@@ -1,3 +1,4 @@
+const Wallet = require("./Wallet");
 const Squad = require("./Squad");
 
 /**
@@ -6,15 +7,16 @@ const Squad = require("./Squad");
  * @param {Object} config - Object of configuration options
  * @param {Number} config.margin - Margin to use for the simulation
  * @param {Object} wallet - Object of wallet data
- * @param {Number} wallet.usd - USD balance
- * @param {Number} wallet.eth - ETH balance
  * @returns {Object} - Object of wallet data and indicators
  */
 class Backtest {
-  constructor(marketData, config = {}, wallet = {}) {
+  constructor(marketData, config = {}, initialWallet = {}) {
     this.marketData = marketData;
     this.config = { margin: 0.1, ...config };
-    this.wallet = wallet;
+    this.wallet = new Wallet(
+      initialWallet.baseCurrency,
+      initialWallet.quoteCurrency
+    );
     this.indicators = {
       longSurvives: 0,
       shortSurvives: 0,
@@ -24,6 +26,13 @@ class Backtest {
       survivability: null,
     };
     this.squads = [];
+
+    console.log(initialWallet);
+    // initialize the wallet
+    this.wallet.deposit(
+      initialWallet.baseAmount,
+      new Date(this.marketData[0][0])
+    );
   }
 
   init() {
@@ -43,7 +52,7 @@ class Backtest {
     const margin = this.config.margin;
 
     this.updateIndicators(open, high, low, close, margin);
-    this.updateSquads(high, low, close);
+    this.updateSquads(high, low, close, date);
   }
 
   run() {
@@ -53,7 +62,6 @@ class Backtest {
       this.next(dataPoint);
     }
     this.indicators.survivability = this.findSurvivability();
-    this.wallet.balance = this.calculateBalance();
     return { ...this, marketData: null };
   }
 
@@ -75,9 +83,9 @@ class Backtest {
     }
   }
 
-  updateSquads(high, low, close) {
+  updateSquads(high, low, close, date) {
     for (const squad of this.squads) {
-      squad.next(high, low, close);
+      squad.next(high, low, close, date);
     }
   }
 
@@ -86,10 +94,6 @@ class Backtest {
       (this.indicators.longSurvives + this.indicators.shortSurvives) /
       (this.indicators.total * 2)
     );
-  }
-
-  calculateBalance() {
-    return this.wallet.usd + this.wallet.eth * this.marketData[0][4];
   }
 }
 

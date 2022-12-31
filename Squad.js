@@ -5,14 +5,14 @@ class Squad {
   constructor(
     maxSoldiers = 10,
     wallet = {},
-    soldierAmount = 100,
+    soldierInvestment = 100,
     stopLossPercent = 0.05,
     exitPricePercent = 0.2,
     short = false
   ) {
     this.maxSoldiers = maxSoldiers;
     this.wallet = wallet;
-    this.soldierAmount = soldierAmount;
+    this.soldierInvestment = soldierInvestment;
     this.soldiers = [];
     this.stopLossPercent = stopLossPercent;
     this.exitPricePercent = exitPricePercent;
@@ -21,56 +21,45 @@ class Squad {
     this.extractedSoldiers = [];
   }
 
-  deploySoldier(close) {
+  deploySoldier(close, date) {
     // create a new soldier
     const soldier = new Soldier(
-      this.soldierAmount,
+      this.soldierInvestment,
       close,
       close * (1 - this.stopLossPercent),
       close * (1 + this.exitPricePercent),
       this.short
     );
     // update wallet
-    this.wallet.usd -= this.soldierAmount;
-    this.wallet.eth += this.soldierAmount / close;
+    this.wallet.buy(this.soldierInvestment, close, date);
+
     // add soldier to squad
     this.soldiers.push(soldier);
   }
 
-  next(high, low, close) {
+  next(high, low, close, date) {
     const deploymentPossible =
       this.soldiers.length < this.maxSoldiers &&
-      this.wallet.usd > this.soldierAmount;
-    console.log(deploymentPossible);
+      this.wallet.baseBalance > this.soldierInvestment;
     // run the next simulation cycle
     if (deploymentPossible) {
-      this.deploySoldier(close);
+      this.deploySoldier(close, date);
     }
     for (const soldier of this.soldiers) {
       soldier.next(high, low, close);
       if (!soldier.alive) {
-        this.wallet.usd += soldier.balance;
-        this.wallet.eth -= soldier.amount / close;
+        this.wallet.sell(soldier.baseBalance, soldier.exitPrice, date);
+        this.deadSoldiers.push({ ...soldier });
       }
       if (soldier.extracted) {
-        this.wallet.usd += soldier.balance;
-        this.wallet.eth -= soldier.amount / close;
+        this.wallet.sell(soldier.baseBalance, soldier.exitPrice, date);
+        this.extractedSoldiers.push({ ...soldier });
       }
     }
-    for (const soldier of this.soldiers) {
-      if (!soldier.alive || soldier.extracted) {
-        const outboundSoldier = this.soldiers.splice(
-          this.soldiers.indexOf(soldier),
-          1
-        );
-        if (!soldier.alive) {
-          this.deadSoldiers.push(outboundSoldier);
-        }
-        if (soldier.extracted) {
-          this.extractedSoldiers.push(outboundSoldier);
-        }
-      }
-    }
+    // remove inactive soldiers
+    this.soldiers = this.soldiers.filter(
+      (soldier) => soldier.alive && !soldier.extracted
+    );
   }
 }
 

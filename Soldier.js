@@ -19,7 +19,7 @@ class Soldier {
         } else if (low < this.exitPrice) {
           this.extract(this.exitPrice);
         } else {
-          this.continue(close)
+          this.continue(close);
         }
       } else {
         if (high > this.exitPrice) {
@@ -27,15 +27,16 @@ class Soldier {
         } else if (low < this.stopLoss) {
           this.die(this.stopLoss);
         } else {
-          this.continue(close)
+          this.continue(close);
         }
       }
-    } else return
+    } else return;
   }
 
   extract(price) {
     this.extracted = true;
-    this.setBalance(price);}
+    this.setBalance(price);
+  }
 
   die(price) {
     this.alive = false;
@@ -50,10 +51,12 @@ class Soldier {
   setBalance(close) {
     if (this.alive && !this.extracted) {
       if (this.short) {
-        this.balance = this.amount * (this.entryPrice - close));
+        this.balance = this.amount * (this.entryPrice - close);
       } else {
         this.balance = this.amount * (close - this.entryPrice);
       }
     }
   }
 }
+
+module.exports = Soldier;

@@ -1,0 +1,168 @@
+{
+  "marketData": null,
+  "config": {
+    "margin": 0.05
+  },
+  "wallet": {
+    "usd": 24.00000000000001,
+    "eth": -681.248847223364,
+    "balance": -1903.9342376421203
+  },
+  "indicators": {
+    "longSurvives": 508,
+    "shortSurvives": 479,
+    "openEqHigh": 233,
+    "openEqLow": 254,
+    "total": 705,
+    "survivability": 0.7
+  },
+  "squads": [
+    {
+      "maxSoldiers": 10,
+      "wallet": {
+        "usd": 24.00000000000001,
+        "eth": -681.248847223364,
+        "balance": -1903.9342376421203
+      },
+      "soldierAmount": 100,
+      "soldiers": [],
+      "stopLossPercent": 0.05,
+      "exitPricePercent": 0.2,
+      "short": false,
+      "deadSoldiers": [
+        [
+          {
+            "amount": 100,
+            "entryPrice": 2.83,
+            "stopLoss": 2.6885,
+            "exitPrice": 3.396,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 1,
+            "balance": 0
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.67,
+            "stopLoss": 1.5864999999999998,
+            "exitPrice": 2.004,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 0,
+            "balance": null
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.25,
+            "stopLoss": 1.1875,
+            "exitPrice": 1.5,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 2,
+            "balance": 11.00000000000001
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.36,
+            "stopLoss": 1.292,
+            "exitPrice": 1.6320000000000001,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 1,
+            "balance": 0
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.35,
+            "stopLoss": 1.2825,
+            "exitPrice": 1.62,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 0,
+            "balance": null
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.13,
+            "stopLoss": 1.0735,
+            "exitPrice": 1.3559999999999999,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 4,
+            "balance": 13.00000000000001
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.26,
+            "stopLoss": 1.1969999999999998,
+            "exitPrice": 1.512,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 1,
+            "balance": 0
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.26,
+            "stopLoss": 1.1969999999999998,
+            "exitPrice": 1.512,
+            "short": false,
+            "alive": false,
+            "extracted": false,
+            "lifeSpan": 2,
+            "balance": 0
+          }
+        ]
+      ],
+      "extractedSoldiers": [
+        [
+          {
+            "amount": 100,
+            "entryPrice": 1.07,
+            "stopLoss": 1.0165,
+            "exitPrice": 1.284,
+            "short": false,
+            "alive": true,
+            "extracted": true,
+            "lifeSpan": 0,
+            "balance": null
+          }
+        ],
+        [
+          {
+            "amount": 100,
+            "entryPrice": 0.976509,
+            "stopLoss": 0.9276835499999999,
+            "exitPrice": 1.1718107999999998,
+            "short": false,
+            "alive": true,
+            "extracted": true,
+            "lifeSpan": 0,
+            "balance": null
+          }
+        ]
+      ]
+    }
+  ]
+}

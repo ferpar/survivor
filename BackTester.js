@@ -1,3 +1,5 @@
+const Squad = require("./Squad");
+
 /**
  * Backtest class, used to simulate a trading strategy, and return wallet data and indicators.
  * @param {Array} marketData - Array of market data
@@ -21,6 +23,15 @@ class Backtest {
       total: this.marketData.length,
       survivability: null,
     };
+    this.squads = [];
+  }
+
+  init() {
+    // initialize the backtest
+    // create a squad
+    const squad1 = new Squad(10, this.wallet, 100, 0.05, 0.2, false);
+    // add squad to squads
+    this.squads.push(squad1);
   }
 
   next(dataPoint) {
@@ -31,6 +42,22 @@ class Backtest {
     const close = dataPoint[4];
     const margin = this.config.margin;
 
+    this.updateIndicators(open, high, low, close, margin);
+    this.updateSquads(high, low, close);
+  }
+
+  run() {
+    // run the backtest on the market data
+    for (const dataPoint of this.marketData) {
+      // run the next simulation cycle
+      this.next(dataPoint);
+    }
+    this.indicators.survivability = this.findSurvivability();
+    this.wallet.balance = this.calculateBalance();
+    return { ...this, marketData: null };
+  }
+
+  updateIndicators(open, high, low, close, margin) {
     if (low > (1 - margin) * open) {
       this.indicators.longSurvives++;
     }
@@ -48,15 +75,10 @@ class Backtest {
     }
   }
 
-  run() {
-    // run the backtest on the market data
-    for (const dataPoint of this.marketData) {
-      // run the next simulation cycle
-      this.next(dataPoint);
+  updateSquads(high, low, close) {
+    for (const squad of this.squads) {
+      squad.next(high, low, close);
     }
-    this.indicators.survivability = this.findSurvivability();
-    this.wallet.balance = this.calculateBalance();
-    return { wallet: this.wallet, indicators: this.indicators };
   }
 
   findSurvivability() {

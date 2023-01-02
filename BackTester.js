@@ -12,7 +12,7 @@ const Squad = require("./Squad");
 class Backtest {
   constructor(marketData, config = {}, initialWallet = {}) {
     this.marketData = marketData;
-    this.config = { margin: 0.1, ...config };
+    this.config = config;
     this.wallet = new Wallet(
       initialWallet.baseCurrency,
       initialWallet.quoteCurrency
@@ -37,7 +37,14 @@ class Backtest {
   init() {
     // initialize the backtest
     // create a squad
-    const squad1 = new Squad(10, this.wallet, 100, 0.05, 0.2, false);
+    const squad1 = new Squad(
+      this.config.maxSoldiers,
+      this.wallet,
+      this.config.amountPerSoldier,
+      this.config.marginStop,
+      this.config.marginLimit,
+      false
+    );
     // add squad to squads
     this.squads.push(squad1);
   }
@@ -61,7 +68,7 @@ class Backtest {
       this.next(dataPoint);
     }
     this.indicators.survivability = this.findSurvivability();
-    return { ...this, marketData: null };
+    return { ...this };
   }
 
   updateIndicators(open, high, low, close, margin) {

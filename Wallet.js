@@ -15,11 +15,11 @@ class Wallet {
     this.transactions.push({ type: "buy", amount, price, date });
   }
 
-  sell(amount, price, date) {
+  sell(amount, price, date, entryPrice) {
     this.balance += amount;
     this.baseBalance += amount;
     this.quoteBalance -= amount / price;
-    this.transactions.push({ type: "sell", amount, price, date });
+    this.transactions.push({ type: "sell", amount, price, entryPrice, date });
   }
 
   deposit(amount, date) {

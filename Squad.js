@@ -48,11 +48,21 @@ class Squad {
     for (const soldier of this.soldiers) {
       soldier.next(high, low, close);
       if (!soldier.alive) {
-        this.wallet.sell(soldier.baseBalance, soldier.exitPrice, date);
+        this.wallet.sell(
+          soldier.baseBalance,
+          soldier.exitPrice,
+          date,
+          soldier.entryPrice
+        );
         this.deadSoldiers.push({ ...soldier });
       }
       if (soldier.extracted) {
-        this.wallet.sell(soldier.baseBalance, soldier.exitPrice, date);
+        this.wallet.sell(
+          soldier.baseBalance,
+          soldier.exitPrice,
+          date,
+          soldier.entryPrice
+        );
         this.extractedSoldiers.push({ ...soldier });
       }
     }

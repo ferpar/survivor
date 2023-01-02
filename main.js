@@ -2,7 +2,7 @@ const marketData = require("./dataSets/coinGecko/ETHOHLC.json");
 const Backtest = require("./BackTester");
 
 const initialWallet = {
-  baseCurrency: "baseCurrency",
+  baseCurrency: "usd",
   quoteCurrency: "eth",
   baseAmount: 1000,
   quoteAmount: 0,
@@ -29,7 +29,13 @@ const initialWallet = {
 (async () => {
   const backtest = new Backtest(
     marketData,
-    { margin: 0.05, marginStop: 0.05, maginLimit: 0.2 },
+    {
+      margin: 0.05,
+      marginStop: 0.05,
+      maginLimit: 0.2,
+      maxSoldiers: 10,
+      amountPerSoldier: 100,
+    },
     initialWallet
   );
   backtest.init();

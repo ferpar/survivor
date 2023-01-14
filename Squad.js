@@ -46,11 +46,11 @@ class Squad {
       this.deploySoldier(close, date);
     }
     for (const soldier of this.soldiers) {
-      soldier.next(high, low, close);
+      soldier.next(high, low, close, date);
       if (!soldier.alive) {
         this.wallet.sell(
           soldier.baseBalance,
-          soldier.exitPrice,
+          soldier.stopLoss,
           date,
           soldier.entryPrice
         );

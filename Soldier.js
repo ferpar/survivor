@@ -55,20 +55,24 @@ class Soldier {
 
   updateBalance(close) {
     if (this.alive && !this.extracted) {
+      this.baseBalance = this.quoteAmount * close;
       if (this.short) {
-        this.baseBalance = this.quoteAmount * close;
         this.profitLoss = this.amount * (this.entryPrice - close);
       } else {
-        this.baseBalance = this.quoteAmount * close;
         this.profitLoss = this.amount * (close - this.entryPrice);
       }
     } else {
+      this.baseBalance = this.alive
+        ? this.quoteAmount * this.exitPrice
+        : this.quoteAmount * this.stopLoss;
       if (this.short) {
-        this.baseBalance = this.quoteAmount * this.exitPrice;
-        this.profitLoss = this.amount * (this.entryPrice - this.exitPrice);
+        this.profitLoss = this.alive
+          ? this.amount * (this.entryPrice - this.exitPrice)
+          : this.amount * (this.entryPrice - this.stopLoss);
       } else {
-        this.baseBalance = this.quoteAmount * this.exitPrice;
-        this.profitLoss = this.amount * (this.exitPrice - this.entryPrice);
+        this.profitLoss = this.alive
+          ? this.amount * (this.exitPrice - this.entryPrice)
+          : this.amount * (this.stopLoss - this.entryPrice);
       }
     }
   }

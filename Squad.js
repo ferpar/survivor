@@ -26,8 +26,8 @@ class Squad {
     const soldier = new Soldier(
       this.soldierInvestment,
       close,
-      close * (1 - this.stopLossPercent),
-      close * (1 + this.exitPricePercent),
+      this.stopLossPercent,
+      this.exitPricePercent,
       this.short
     );
     // update wallet

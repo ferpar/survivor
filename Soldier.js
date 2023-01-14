@@ -1,10 +1,20 @@
 class Soldier {
-  constructor(amount, entryPrice, stopLoss, exitPrice, short = false) {
+  constructor(
+    amount,
+    entryPrice,
+    stopLossPercent,
+    exitPricePercent,
+    short = false
+  ) {
+    this.short = short;
     this.quoteAmount = amount / entryPrice;
     this.entryPrice = entryPrice;
-    this.stopLoss = stopLoss;
-    this.exitPrice = exitPrice;
-    this.short = short;
+    this.stopLoss = this.short
+      ? entryPrice * (1 + stopLossPercent)
+      : entryPrice * (1 - stopLossPercent);
+    this.exitPrice = this.short
+      ? entryPrice * (1 - exitPricePercent)
+      : entryPrice * (1 + exitPricePercent);
     this.alive = true;
     this.diedAt = null;
     this.extracted = false;

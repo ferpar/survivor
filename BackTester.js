@@ -43,7 +43,7 @@ class Backtest {
       this.config.amountPerSoldier,
       this.config.marginStop,
       this.config.marginLimit,
-      false
+      true
     );
     // add squad to squads
     this.squads.push(squad1);

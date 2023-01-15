@@ -1,5 +1,5 @@
 const marketDataRaw = require("./dataSets/coinGecko/ETHOHLC.json");
-const Backtest = require("./BackTester");
+const Backtest = require("./domain/BackTester");
 
 // get the last 1440 candles
 const marketData = marketDataRaw.slice(-120);
@@ -10,24 +10,6 @@ const initialWallet = {
   baseAmount: 1000,
   quoteAmount: 0,
 };
-
-// (async () => {
-//   const margins = Array.from({ length: 25 }, (_, i) => i / 100);
-
-//   const survivability = margins.map((margin) => {
-//     const backtest = new Backtest(
-//       marketData,
-//       { margin },
-//       {
-//         usd: 1000,
-//         eth: 0,
-//       }
-//     );
-//     const backtestResults = backtest.run();
-//     return { survivalScore: backtestResults.indicators.survivability, margin };
-//   });
-//   console.log(survivability);
-// })();
 
 if (process.argv[2] === "margin-heatmap") {
   (async () => {

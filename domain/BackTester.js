@@ -17,14 +17,7 @@ class Backtest {
       initialWallet.baseCurrency,
       initialWallet.quoteCurrency
     );
-    this.indicators = {
-      longSurvives: 0,
-      shortSurvives: 0,
-      openEqHigh: 0,
-      openEqLow: 0,
-      total: this.marketData.length,
-      survivability: null,
-    };
+    this.indicators = {};
     this.squads = [];
 
     // initialize the wallet
@@ -67,39 +60,17 @@ class Backtest {
       // run the next simulation cycle
       this.next(dataPoint);
     }
-    this.indicators.survivability = this.findSurvivability();
     return { ...this };
   }
 
   updateIndicators(open, high, low, close, margin) {
-    if (low > (1 - margin) * open) {
-      this.indicators.longSurvives++;
-    }
-
-    if (high < (1 + margin) * open) {
-      this.indicators.shortSurvives++;
-    }
-
-    if (open === high) {
-      this.indicators.openEqHigh++;
-    }
-
-    if (open === low) {
-      this.indicators.openEqLow++;
-    }
+    return;
   }
 
   updateSquads(high, low, close, date) {
     for (const squad of this.squads) {
       squad.next(high, low, close, date);
     }
-  }
-
-  findSurvivability() {
-    return (
-      (this.indicators.longSurvives + this.indicators.shortSurvives) /
-      (this.indicators.total * 2)
-    );
   }
 }
 

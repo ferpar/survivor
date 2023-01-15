@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "jest --config ./jest.config.json --watch"
   },
   "keywords": [],
   "author": "Fernando <ferp@protonmail.ch>",

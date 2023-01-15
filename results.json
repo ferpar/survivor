@@ -2354,14 +2354,7 @@
       }
     ]
   },
-  "indicators": {
-    "longSurvives": 86,
-    "shortSurvives": 93,
-    "openEqHigh": 41,
-    "openEqLow": 43,
-    "total": 120,
-    "survivability": 0.7458333333333333
-  },
+  "indicators": {},
   "squads": [
     {
       "maxSoldiers": 10,

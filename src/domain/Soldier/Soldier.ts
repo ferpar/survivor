@@ -1,11 +1,27 @@
-class Soldier {
-  constructor(
+import { ISoldier } from "./Soldier.d";
+import { ISoldierConfig } from "../../types/domain";
+
+export class Soldier implements ISoldier {
+  short: boolean;
+  quoteAmount: number;
+  entryPrice: number;
+  stopLoss: number;
+  exitPrice: number;
+  alive: boolean;
+  diedAt: Date | null;
+  extracted: boolean;
+  extractedAt: Date | null;
+  lifeSpan: number;
+  baseBalance: number | null;
+  profitLoss: number | null;
+
+  constructor({
+    short = false,
     amount,
     entryPrice,
     stopLossPercent,
     exitPricePercent,
-    short = false
-  ) {
+  }: ISoldierConfig) {
     this.short = short;
     this.quoteAmount = amount / entryPrice;
     this.entryPrice = entryPrice;
@@ -23,7 +39,7 @@ class Soldier {
     this.baseBalance = null;
     this.profitLoss = null;
   }
-  next(high, low, close, date) {
+  next(high: number, low: number, close: number, date: Date) {
     // run the next simulation cycle
     if (this.alive && !this.extracted) {
       if (this.short) {
@@ -46,30 +62,30 @@ class Soldier {
     } else return;
   }
 
-  extract(price, date) {
+  extract(price: number, date: Date) {
     this.extracted = true;
     this.extractedAt = date;
     this.updateBalance(price);
   }
 
-  die(price, date) {
+  die(price: number, date: Date) {
     this.alive = false;
     this.diedAt = date;
     this.updateBalance(price);
   }
 
-  continue(price) {
+  continue(price: number) {
     this.updateBalance(price);
     this.lifeSpan++;
   }
 
-  updateBalance(close) {
+  updateBalance(close: number) {
     if (this.alive && !this.extracted) {
       this.baseBalance = this.quoteAmount * close;
       if (this.short) {
-        this.profitLoss = this.amount * (this.entryPrice - close);
+        this.profitLoss = this.quoteAmount * (this.entryPrice - close);
       } else {
-        this.profitLoss = this.amount * (close - this.entryPrice);
+        this.profitLoss = this.quoteAmount * (close - this.entryPrice);
       }
     } else {
       this.baseBalance = this.alive
@@ -77,15 +93,13 @@ class Soldier {
         : this.quoteAmount * this.stopLoss;
       if (this.short) {
         this.profitLoss = this.alive
-          ? this.amount * (this.entryPrice - this.exitPrice)
-          : this.amount * (this.entryPrice - this.stopLoss);
+          ? this.quoteAmount * (this.entryPrice - this.exitPrice)
+          : this.quoteAmount * (this.entryPrice - this.stopLoss);
       } else {
         this.profitLoss = this.alive
-          ? this.amount * (this.exitPrice - this.entryPrice)
-          : this.amount * (this.stopLoss - this.entryPrice);
+          ? this.quoteAmount * (this.exitPrice - this.entryPrice)
+          : this.quoteAmount * (this.stopLoss - this.entryPrice);
       }
     }
   }
 }
-
-module.exports = Soldier;

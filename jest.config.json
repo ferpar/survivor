@@ -1,3 +1,5 @@
 {
-  "testRegex": "((\\.|/*.)(spec))\\.js?$"
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testRegex": "((\\.|/*.)(spec))\\.ts?$"
 }

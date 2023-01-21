@@ -1,7 +1,8 @@
 //basic jest test for Soldier class
-const Soldier = require("./Soldier");
+import { Soldier } from "./Soldier";
+import { ISoldierConfig } from "../../types/domain.d";
 
-const initialConfig = {
+const initialConfig: ISoldierConfig = {
   amount: 100,
   entryPrice: 100,
   stopLossPercent: 0.05,
@@ -11,7 +12,7 @@ const initialConfig = {
 
 let soldier;
 beforeEach(() => {
-  soldier = new Soldier(...Object.values(initialConfig));
+  soldier = new Soldier(initialConfig);
 });
 
 describe("Soldier", () => {

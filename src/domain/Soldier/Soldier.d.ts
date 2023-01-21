@@ -1,3 +1,5 @@
+import { IDataPoint } from "../../types/domain";
+
 export interface ISoldier {
   short: boolean;
   quoteAmount: number;
@@ -11,7 +13,7 @@ export interface ISoldier {
   lifeSpan: number;
   baseBalance: number | null;
   profitLoss: number | null;
-  next(high: number, low: number, close: number, date: Date): void;
+  next(dataPoint: IDataPoint): void;
   extract(price: number, date: Date): void;
   die(price: number, date: Date): void;
   continue(price: number): void;

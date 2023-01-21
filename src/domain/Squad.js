@@ -37,7 +37,8 @@ class Squad {
     this.soldiers.push(soldier);
   }
 
-  next(high, low, close, date) {
+  next(dataPoint) {
+    const { close, date } = dataPoint;
     const deploymentPossible =
       this.soldiers.length < this.maxSoldiers &&
       this.wallet.baseBalance > this.soldierInvestment;
@@ -46,7 +47,7 @@ class Squad {
       this.deploySoldier(close, date);
     }
     for (const soldier of this.soldiers) {
-      soldier.next(high, low, close, date);
+      soldier.next(dataPoint);
       if (!soldier.alive) {
         this.wallet.sell(
           soldier.baseBalance,

@@ -42,23 +42,25 @@ class Backtest {
     this.squads.push(squad1);
   }
 
-  next(dataPoint) {
-    const date = new Date(dataPoint[0]);
-    const open = dataPoint[1];
-    const high = dataPoint[2];
-    const low = dataPoint[3];
-    const close = dataPoint[4];
+  next(rawDataPoint) {
+    const date = new Date(rawDataPoint[0]);
+    const open = rawDataPoint[1];
+    const high = rawDataPoint[2];
+    const low = rawDataPoint[3];
+    const close = rawDataPoint[4];
     const margin = this.config.margin;
 
+    const dataPoint = { date, open, high, low, close };
+
     this.updateIndicators(open, high, low, close, margin);
-    this.updateSquads(high, low, close, date);
+    this.updateSquads(dataPoint);
   }
 
   run() {
     // run the backtest on the market data
-    for (const dataPoint of this.marketData) {
+    for (const rawDataPoint of this.marketData) {
       // run the next simulation cycle
-      this.next(dataPoint);
+      this.next(rawDataPoint);
     }
     return { ...this };
   }
@@ -67,9 +69,9 @@ class Backtest {
     return;
   }
 
-  updateSquads(high, low, close, date) {
+  updateSquads(dataPoint) {
     for (const squad of this.squads) {
-      squad.next(high, low, close, date);
+      squad.next(dataPoint);
     }
   }
 }

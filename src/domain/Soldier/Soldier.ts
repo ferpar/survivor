@@ -1,12 +1,12 @@
 import { ISoldier } from "./Soldier.d";
-import { ISoldierConfig } from "../../types/domain";
+import { ISoldierConfig, IDataPoint } from "../../types/domain";
 
 export class Soldier implements ISoldier {
   short: boolean;
   quoteAmount: number;
   entryPrice: number;
-  stopLoss: number;
-  exitPrice: number;
+  stopLoss: number; // this is the price at which the soldier will die
+  exitPrice: number; // this is the price at which the soldier will extract
   alive: boolean;
   diedAt: Date | null;
   extracted: boolean;
@@ -39,7 +39,8 @@ export class Soldier implements ISoldier {
     this.baseBalance = null;
     this.profitLoss = null;
   }
-  next(high: number, low: number, close: number, date: Date) {
+  next(dataPoint: IDataPoint) {
+    const { date, high, low, close } = dataPoint;
     // run the next simulation cycle
     if (this.alive && !this.extracted) {
       if (this.short) {

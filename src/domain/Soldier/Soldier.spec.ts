@@ -1,6 +1,6 @@
 //basic jest test for Soldier class
 import { Soldier } from "./Soldier";
-import { ISoldierConfig } from "../../types/domain.d";
+import { ISoldierConfig, IDataPoint } from "../../types/domain.d";
 
 const initialConfig: ISoldierConfig = {
   amount: 100,
@@ -10,17 +10,26 @@ const initialConfig: ISoldierConfig = {
   short: false,
 };
 
-let soldier;
+// this is the data point that will kill the soldier
+const dataPoint1: IDataPoint = {
+  date: new Date(),
+  open: 100,
+  high: 100,
+  low: 90,
+  close: 95,
+};
+
+let soldier: Soldier;
 beforeEach(() => {
   soldier = new Soldier(initialConfig);
 });
 
 describe("Soldier", () => {
   it("should be defined", () => {
-    expect(Soldier).toBeDefined();
+    expect(soldier).toBeDefined();
   });
-});
-
-afterEach(() => {
-  soldier = null;
+  it("dies if the price falls below the stop loss", () => {
+    soldier.next(dataPoint1);
+    expect(soldier.alive).toBe(false);
+  });
 });

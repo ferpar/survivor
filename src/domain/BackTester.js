@@ -1,5 +1,5 @@
 const Wallet = require("./Wallet");
-const Squad = require("./Squad");
+const Squad = require("./Squad/Squad");
 
 /**
  * Backtest class, used to simulate a trading strategy, and return wallet data and indicators.

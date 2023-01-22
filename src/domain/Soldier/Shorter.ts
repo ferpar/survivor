@@ -38,6 +38,8 @@ export class Shorter extends Soldier {
       this.profitLoss = this.alive
         ? this.quoteDebt * (this.entryPrice - this.exitPrice)
         : this.quoteDebt * (this.entryPrice - this.stopLoss);
+      this.collateral = 0;
+      this.quoteDebt = 0;
     }
   }
 }

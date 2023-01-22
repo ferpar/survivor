@@ -1,4 +1,4 @@
-const Soldier = require("./Soldier/Soldier");
+const Soldier = require("../Soldier/Soldier");
 
 // takes care of deploying soldiers
 class Squad {

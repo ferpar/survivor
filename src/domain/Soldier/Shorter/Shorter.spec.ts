@@ -1,6 +1,6 @@
 //basic jest test for Shorter class
 import { Shorter } from "./Shorter";
-import { ISoldierConfig, IDataPoint } from "../../types/domain.d";
+import { ISoldierConfig, IDataPoint } from "../../../types/domain";
 
 const shortConfig: ISoldierConfig = {
   amount: 100,

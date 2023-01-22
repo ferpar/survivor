@@ -1,6 +1,7 @@
 import { Soldier } from "./Soldier";
 import { ISoldierConfig, IDataPoint } from "../../types/domain";
 
+// the shorter soldier is a soldier that is shorting the market
 export class Shorter extends Soldier {
   quoteDebt: number;
   collateral: number;

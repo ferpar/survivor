@@ -8,6 +8,8 @@ export class Shorter extends Soldier {
     super(config);
     this.quoteDebt = config.amount / config.entryPrice;
     this.collateral = config.amount;
+    this.stopLoss = this.entryPrice * (1 + config.stopLossPercent);
+    this.exitPrice = this.entryPrice * (1 - config.exitPricePercent);
   }
   next(datapoint: IDataPoint) {
     const { date, high, low, close } = datapoint;
@@ -24,9 +26,11 @@ export class Shorter extends Soldier {
   }
   updateBalance(close: number) {
     if (this.alive && !this.extracted) {
+      // if the soldier is continuing to fight
       this.baseBalance = this.quoteDebt * close;
       this.profitLoss = this.collateral - this.quoteDebt * close;
     } else {
+      // if the soldier is dead or extracted
       this.baseBalance = this.alive
         ? this.quoteDebt * (this.entryPrice - this.exitPrice) + this.collateral
         : this.quoteDebt * (this.entryPrice - this.stopLoss) + this.collateral;

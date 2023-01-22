@@ -1,7 +1,6 @@
 import { IDataPoint } from "../../types/domain";
 
 export interface ISoldier {
-  short: boolean;
   quoteAmount: number;
   entryPrice: number;
   stopLoss: number;

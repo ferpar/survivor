@@ -2,7 +2,6 @@ import { ISoldier } from "./Soldier.d";
 import { ISoldierConfig, IDataPoint } from "../../types/domain";
 
 export class Soldier implements ISoldier {
-  short: boolean;
   quoteAmount: number;
   entryPrice: number;
   stopLoss: number; // this is the price at which the soldier will die
@@ -16,21 +15,15 @@ export class Soldier implements ISoldier {
   profitLoss: number;
 
   constructor({
-    short = false,
     amount,
     entryPrice,
     stopLossPercent,
     exitPricePercent,
   }: ISoldierConfig) {
-    this.short = short;
     this.quoteAmount = amount / entryPrice;
     this.entryPrice = entryPrice;
-    this.stopLoss = this.short
-      ? entryPrice * (1 + stopLossPercent)
-      : entryPrice * (1 - stopLossPercent);
-    this.exitPrice = this.short
-      ? entryPrice * (1 - exitPricePercent)
-      : entryPrice * (1 + exitPricePercent);
+    this.stopLoss = entryPrice * (1 - stopLossPercent);
+    this.exitPrice = entryPrice * (1 + exitPricePercent);
     this.alive = true;
     this.diedAt = null;
     this.extracted = false;
@@ -43,22 +36,12 @@ export class Soldier implements ISoldier {
     const { date, high, low, close } = dataPoint;
     // run the next simulation cycle
     if (this.alive && !this.extracted) {
-      if (this.short) {
-        if (high >= this.stopLoss) {
-          this.die(this.stopLoss, date);
-        } else if (low <= this.exitPrice) {
-          this.extract(this.exitPrice, date);
-        } else {
-          this.continue(close);
-        }
+      if (high >= this.exitPrice) {
+        this.extract(this.exitPrice, date);
+      } else if (low <= this.stopLoss) {
+        this.die(this.stopLoss, date);
       } else {
-        if (high >= this.exitPrice) {
-          this.extract(this.exitPrice, date);
-        } else if (low <= this.stopLoss) {
-          this.die(this.stopLoss, date);
-        } else {
-          this.continue(close);
-        }
+        this.continue(close);
       }
     } else return;
   }
@@ -82,25 +65,17 @@ export class Soldier implements ISoldier {
 
   updateBalance(close: number) {
     if (this.alive && !this.extracted) {
+      // if the soldier is continuing to fight
       this.baseBalance = this.quoteAmount * close;
-      if (this.short) {
-        this.profitLoss = this.quoteAmount * (this.entryPrice - close);
-      } else {
-        this.profitLoss = this.quoteAmount * (close - this.entryPrice);
-      }
+      this.profitLoss = this.quoteAmount * (close - this.entryPrice);
     } else {
+      // if the soldier is dead or has extracted
       this.baseBalance = this.alive
         ? this.quoteAmount * this.exitPrice
         : this.quoteAmount * this.stopLoss;
-      if (this.short) {
-        this.profitLoss = this.alive
-          ? this.quoteAmount * (this.entryPrice - this.exitPrice)
-          : this.quoteAmount * (this.entryPrice - this.stopLoss);
-      } else {
-        this.profitLoss = this.alive
-          ? this.quoteAmount * (this.exitPrice - this.entryPrice)
-          : this.quoteAmount * (this.stopLoss - this.entryPrice);
-      }
+      this.profitLoss = this.alive
+        ? this.quoteAmount * (this.exitPrice - this.entryPrice)
+        : this.quoteAmount * (this.stopLoss - this.entryPrice);
     }
   }
 }

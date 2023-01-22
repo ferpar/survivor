@@ -3,7 +3,6 @@ export interface ISoldierConfig {
   entryPrice: number;
   stopLossPercent: number;
   exitPricePercent: number;
-  short: boolean;
 }
 
 export interface IDataPoint {

@@ -7,7 +7,6 @@ const shortConfig: ISoldierConfig = {
   entryPrice: 100,
   stopLossPercent: 0.05,
   exitPricePercent: 0.2,
-  short: true,
 };
 
 // this is the data point that will kill the short soldier

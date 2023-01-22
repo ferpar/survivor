@@ -1,4 +1,4 @@
-const Wallet = require("./Wallet");
+const Wallet = require("./Wallet/Wallet");
 const Squad = require("./Squad/Squad");
 
 /**

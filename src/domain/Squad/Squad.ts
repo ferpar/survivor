@@ -1,15 +1,29 @@
-const Soldier = require("../Soldier/Soldier");
+import { Soldier } from "../Soldier/Soldier";
+import { Shorter } from "../Soldier/Shorter/Shorter";
+import { Wallet } from "../Wallet/Wallet";
+import { IDataPoint } from "../../types/domain";
+import { ISquad, ISquadConfig } from "./Squad.d";
 
 // takes care of deploying soldiers
-class Squad {
-  constructor(
+export class Squad implements ISquad {
+  maxSoldiers: number;
+  wallet: Wallet;
+  soldierInvestment: number;
+  soldiers: Soldier[];
+  stopLossPercent: number;
+  exitPricePercent: number;
+  short: boolean;
+  deadSoldiers: Soldier[];
+  extractedSoldiers: Soldier[];
+
+  constructor({
     maxSoldiers = 10,
-    wallet = {},
+    wallet,
     soldierInvestment = 100,
     stopLossPercent = 0.05,
     exitPricePercent = 0.2,
-    short = false
-  ) {
+    short = false,
+  }: ISquadConfig) {
     this.maxSoldiers = maxSoldiers;
     this.wallet = wallet;
     this.soldierInvestment = soldierInvestment;
@@ -21,30 +35,37 @@ class Squad {
     this.extractedSoldiers = [];
   }
 
-  deploySoldier(close, date) {
+  deploySoldier(dataPoint: IDataPoint) {
+    const { open, date } = dataPoint; // soldier deployed at beginning of candle
     // create a new soldier
-    const soldier = new Soldier(
-      this.soldierInvestment,
-      close,
-      this.stopLossPercent,
-      this.exitPricePercent,
-      this.short
-    );
+    const soldier = this.short
+      ? new Shorter({
+          amount: this.soldierInvestment,
+          entryPrice: open,
+          stopLossPercent: this.stopLossPercent,
+          exitPricePercent: this.exitPricePercent,
+        })
+      : new Soldier({
+          amount: this.soldierInvestment,
+          entryPrice: open,
+          stopLossPercent: this.stopLossPercent,
+          exitPricePercent: this.exitPricePercent,
+        });
     // update wallet
-    this.wallet.buy(this.soldierInvestment, close, date);
+    this.wallet.buy(this.soldierInvestment, open, date);
 
     // add soldier to squad
     this.soldiers.push(soldier);
   }
 
-  next(dataPoint) {
+  next(dataPoint: IDataPoint) {
     const { close, date } = dataPoint;
     const deploymentPossible =
       this.soldiers.length < this.maxSoldiers &&
       this.wallet.baseBalance > this.soldierInvestment;
     // run the next simulation cycle
     if (deploymentPossible) {
-      this.deploySoldier(close, date);
+      this.deploySoldier(dataPoint);
     }
     for (const soldier of this.soldiers) {
       soldier.next(dataPoint);
@@ -55,7 +76,7 @@ class Squad {
           date,
           soldier.entryPrice
         );
-        this.deadSoldiers.push({ ...soldier });
+        this.deadSoldiers.push(soldier);
       }
       if (soldier.extracted) {
         this.wallet.sell(
@@ -64,7 +85,7 @@ class Squad {
           date,
           soldier.entryPrice
         );
-        this.extractedSoldiers.push({ ...soldier });
+        this.extractedSoldiers.push(soldier);
       }
     }
     // remove inactive soldiers
@@ -73,5 +94,3 @@ class Squad {
     );
   }
 }
-
-module.exports = Squad;

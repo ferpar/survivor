@@ -12,8 +12,8 @@ export class Soldier implements ISoldier {
   extracted: boolean;
   extractedAt: Date | null;
   lifeSpan: number;
-  baseBalance: number | null;
-  profitLoss: number | null;
+  baseBalance: number;
+  profitLoss: number;
 
   constructor({
     short = false,
@@ -36,25 +36,25 @@ export class Soldier implements ISoldier {
     this.extracted = false;
     this.extractedAt = null;
     this.lifeSpan = 0;
-    this.baseBalance = null;
-    this.profitLoss = null;
+    this.baseBalance = amount;
+    this.profitLoss = 0;
   }
   next(dataPoint: IDataPoint) {
     const { date, high, low, close } = dataPoint;
     // run the next simulation cycle
     if (this.alive && !this.extracted) {
       if (this.short) {
-        if (high > this.stopLoss) {
+        if (high >= this.stopLoss) {
           this.die(this.stopLoss, date);
-        } else if (low < this.exitPrice) {
+        } else if (low <= this.exitPrice) {
           this.extract(this.exitPrice, date);
         } else {
           this.continue(close);
         }
       } else {
-        if (high > this.exitPrice) {
+        if (high >= this.exitPrice) {
           this.extract(this.exitPrice, date);
-        } else if (low < this.stopLoss) {
+        } else if (low <= this.stopLoss) {
           this.die(this.stopLoss, date);
         } else {
           this.continue(close);

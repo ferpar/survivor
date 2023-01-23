@@ -2,22 +2,23 @@ import { Squad } from "./Squad";
 import { Wallet } from "../Wallet/Wallet";
 import { IDataPoint } from "../../types/domain";
 import { ISquadConfig } from "./Squad.d";
+import { IWalletConfig } from "../Wallet/Wallet.d";
 
-const initialWallet = new Wallet({
+const initialWallet: IWalletConfig = {
   baseCurrency: "USD",
   quoteCurrency: "ETH",
   baseAmount: 1000,
   quoteAmount: 0,
-});
+};
 
-const squadConfig: ISquadConfig = {
+const squadConfig = (): ISquadConfig => ({
   maxSoldiers: 10,
-  wallet: initialWallet,
+  wallet: new Wallet(initialWallet),
   soldierInvestment: 100,
   stopLossPercent: 0.05,
   exitPricePercent: 0.2,
   short: false,
-};
+});
 
 const squadConfigShort: ISquadConfig = {
   maxSoldiers: 10,
@@ -57,7 +58,7 @@ const dataPointLong3: IDataPoint = {
 
 let squad: Squad;
 beforeEach(() => {
-  squad = new Squad(squadConfig);
+  squad = new Squad(squadConfig());
 });
 
 describe("Squad playing long", () => {
@@ -88,18 +89,18 @@ describe("Squad playing long", () => {
     expect(squad.soldiers[0].lifeSpan).toBe(2); // first soldier lived for 2 intervals
     expect(squad.soldiers[1].lifeSpan).toBe(1); // second soldier lived for 1 interval
   });
-  xit("increases the wallet when it extracts", () => {
-    squad.next(dataPointLong1);
-    squad.next(dataPointLong3);
-    expect(squad.wallet.baseBalance).toBe(100);
+  it("increases the wallet when it extracts", () => {
+    squad.next(dataPointLong1); // deploy soldier at 100
+    squad.next(dataPointLong3); // deploy soldier at 100, extract both soldiers at 120, exit price is 120
+    expect(squad.wallet.baseBalance).toBe(1040);
   });
-  xit("decreases the wallet when it kills", () => {
-    squad.next(dataPointLong1);
-    squad.next(dataPointLong2);
-    expect(squad.wallet.baseBalance).toBe(0);
+  it("restore the baseBalance of the wallet when soldier die", () => {
+    squad.next(dataPointLong1); // deploy soldier at 100
+    squad.next(dataPointLong2); // deploy soldier at 100, kill both soldiers at 93, stop loss price is 95
+    expect(squad.wallet.baseBalance).toBe(990);
   });
-  xit("decreases the wallet when it deploys", () => {
-    squad.next(dataPointLong1);
-    expect(squad.wallet.baseBalance).toBe(0);
+  it("decreases the wallet when it deploys", () => {
+    squad.next(dataPointLong1); //
+    expect(squad.wallet.baseBalance).toBe(900);
   });
 });

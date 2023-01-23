@@ -56,4 +56,22 @@ describe("Wallet", () => {
     // 500 USD baseBalance + 600 USD from sale + 3.5 ETH quoteBalance * 120 USD = 1520 USD
     expect(wallet.balance).toEqual(1520);
   });
+  it("should have a baseBalance of 1100 after depositing 100 USD", () => {
+    wallet.deposit(100, new Date());
+    expect(wallet.baseBalance).toEqual(1100);
+  });
+  it("should have a baseBalance of 900 after withdrawing 100 USD", () => {
+    wallet.withdraw(100, new Date());
+    expect(wallet.baseBalance).toEqual(900);
+  });
+  it("should have a baseBalance of 1200 after withdrawing 500 and depositing 700 USD", () => {
+    wallet.withdraw(500, new Date());
+    wallet.deposit(700, new Date());
+    expect(wallet.baseBalance).toEqual(1200);
+  });
+  it("should have a balance of 1450 after buying 5 ETH at 100 USD each and then depositing 100 USD", () => {
+    wallet.buy(500, 100, new Date());
+    wallet.deposit(100, new Date());
+    expect(wallet.balance).toEqual(1450);
+  });
 });

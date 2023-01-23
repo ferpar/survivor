@@ -23,26 +23,28 @@ export class Wallet implements IWallet {
   }
 
   buy(amount: number, price: number, date: Date) {
-    this.balance -= amount;
     this.baseBalance -= amount;
     this.quoteBalance += amount / price;
+    this.balance = this.baseBalance + this.quoteBalance * price;
     this.transactions.push({ type: "buy", amount, price, date });
   }
 
   sell(amount: number, price: number, date: Date, entryPrice: number) {
-    this.balance += amount;
     this.baseBalance += amount;
     this.quoteBalance -= amount / price;
+    this.balance = this.baseBalance + this.quoteBalance * price;
     this.transactions.push({ type: "sell", amount, price, entryPrice, date });
   }
 
   deposit(amount: number, date: Date) {
+    // deposit base currency
     this.balance += amount;
     this.baseBalance += amount;
     this.transactions.push({ type: "deposit", amount, date });
   }
 
   withdraw(amount: number, date: Date) {
+    // withdraw base currency
     this.balance -= amount;
     this.baseBalance -= amount;
     this.transactions.push({ type: "withdraw", amount, date });

@@ -22,31 +22,37 @@ export class Wallet implements IWallet {
     this.transactions = [];
   }
 
-  buy(amount: number, price: number, date: Date) {
-    this.baseBalance -= amount;
-    this.quoteBalance += amount / price;
+  buy(baseAmount: number, price: number, date: Date) {
+    this.baseBalance -= baseAmount;
+    this.quoteBalance += baseAmount / price;
     this.balance = this.baseBalance + this.quoteBalance * price;
-    this.transactions.push({ type: "buy", amount, price, date });
+    this.transactions.push({ type: "buy", baseAmount, price, date });
   }
 
-  sell(amount: number, price: number, date: Date, entryPrice: number) {
-    this.baseBalance += amount;
-    this.quoteBalance -= amount / price;
+  sell(baseAmount: number, price: number, date: Date, entryPrice: number) {
+    this.baseBalance += baseAmount;
+    this.quoteBalance -= baseAmount / price;
     this.balance = this.baseBalance + this.quoteBalance * price;
-    this.transactions.push({ type: "sell", amount, price, entryPrice, date });
+    this.transactions.push({
+      type: "sell",
+      baseAmount,
+      price,
+      entryPrice,
+      date,
+    });
   }
 
-  deposit(amount: number, date: Date) {
+  deposit(baseAmount: number, date: Date) {
     // deposit base currency
-    this.balance += amount;
-    this.baseBalance += amount;
-    this.transactions.push({ type: "deposit", amount, date });
+    this.balance += baseAmount;
+    this.baseBalance += baseAmount;
+    this.transactions.push({ type: "deposit", baseAmount, date });
   }
 
-  withdraw(amount: number, date: Date) {
+  withdraw(baseAmount: number, date: Date) {
     // withdraw base currency
-    this.balance -= amount;
-    this.baseBalance -= amount;
-    this.transactions.push({ type: "withdraw", amount, date });
+    this.balance -= baseAmount;
+    this.baseBalance -= baseAmount;
+    this.transactions.push({ type: "withdraw", baseAmount, date });
   }
 }

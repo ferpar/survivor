@@ -71,7 +71,7 @@ export class Squad implements ISquad {
       soldier.next(dataPoint);
       if (!soldier.alive) {
         this.wallet.sell(
-          soldier.baseBalance,
+          soldier.balance,
           soldier.stopLoss,
           date,
           soldier.entryPrice
@@ -80,7 +80,7 @@ export class Squad implements ISquad {
       }
       if (soldier.extracted) {
         this.wallet.sell(
-          soldier.baseBalance,
+          soldier.balance,
           soldier.exitPrice,
           date,
           soldier.entryPrice

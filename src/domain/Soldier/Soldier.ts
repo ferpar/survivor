@@ -11,7 +11,7 @@ export class Soldier implements ISoldier {
   extracted: boolean;
   extractedAt: Date | null;
   lifeSpan: number;
-  baseBalance: number;
+  balance: number;
   profitLoss: number;
 
   constructor({
@@ -29,7 +29,7 @@ export class Soldier implements ISoldier {
     this.extracted = false;
     this.extractedAt = null;
     this.lifeSpan = 0;
-    this.baseBalance = amount;
+    this.balance = amount;
     this.profitLoss = 0;
   }
   next(dataPoint: IDataPoint) {
@@ -66,11 +66,11 @@ export class Soldier implements ISoldier {
   updateBalance(close: number) {
     if (this.alive && !this.extracted) {
       // if the soldier is continuing to fight
-      this.baseBalance = this.quoteAmount * close;
+      this.balance = this.quoteAmount * close;
       this.profitLoss = this.quoteAmount * (close - this.entryPrice);
     } else {
       // if the soldier is dead or has extracted
-      this.baseBalance = this.alive
+      this.balance = this.alive
         ? this.quoteAmount * this.exitPrice
         : this.quoteAmount * this.stopLoss;
       this.profitLoss = this.alive

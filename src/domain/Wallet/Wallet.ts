@@ -23,6 +23,8 @@ export class Wallet implements IWallet {
   }
 
   buy(baseAmount: number, price: number, date: Date) {
+    // notice to use this we specify the baseAmount and price
+    // normally we would expect to work with the quoteAmount
     this.baseBalance -= baseAmount;
     this.quoteBalance += baseAmount / price;
     this.balance = this.baseBalance + this.quoteBalance * price;

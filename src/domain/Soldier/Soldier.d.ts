@@ -10,7 +10,7 @@ export interface ISoldier {
   extracted: boolean;
   extractedAt: Date | null;
   lifeSpan: number;
-  baseBalance: number | null;
+  balance: number | null;
   profitLoss: number | null;
   next(dataPoint: IDataPoint): void;
   extract(price: number, date: Date): void;

@@ -28,11 +28,11 @@ export class Shorter extends Soldier {
   updateBalance(close: number) {
     if (this.alive && !this.extracted) {
       // if the soldier is continuing to fight
-      this.baseBalance = this.quoteDebt * close;
+      this.balance = this.quoteDebt * close;
       this.profitLoss = this.collateral - this.quoteDebt * close;
     } else {
       // if the soldier is dead or extracted
-      this.baseBalance = this.alive
+      this.balance = this.alive
         ? this.quoteDebt * (this.entryPrice - this.exitPrice) + this.collateral
         : this.quoteDebt * (this.entryPrice - this.stopLoss) + this.collateral;
       this.profitLoss = this.alive

@@ -69,9 +69,9 @@ describe("Soldier playing long", () => {
   });
   it("updates the base balance when it continues", () => {
     soldier.next(dataPointLong3);
-    expect(soldier.baseBalance).toBe(105);
+    expect(soldier.balance).toBe(105);
     soldier.next(dataPointLong3);
-    expect(soldier.baseBalance).toBe(105);
+    expect(soldier.balance).toBe(105);
   });
   it("updates the profit loss when it continues", () => {
     soldier.next(dataPointLong3);
@@ -85,7 +85,7 @@ describe("Soldier playing long", () => {
   });
   it("updates the base balance when it extracts", () => {
     soldier.next(dataPointLong2);
-    expect(soldier.baseBalance).toBe(120);
+    expect(soldier.balance).toBe(120);
   });
   it("updates the profit loss when it dies", () => {
     soldier.next(dataPointLong1);
@@ -93,7 +93,7 @@ describe("Soldier playing long", () => {
   });
   it("updates the base balance when it dies", () => {
     soldier.next(dataPointLong1);
-    expect(soldier.baseBalance).toBe(95);
+    expect(soldier.balance).toBe(95);
   });
   it("does not die after being extracted", () => {
     soldier.next(dataPointLong2);

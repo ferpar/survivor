@@ -69,9 +69,9 @@ describe("Soldier playing short", () => {
   });
   it("updates the base balance when it continues", () => {
     shortSoldier.next(dataPointShort3);
-    expect(shortSoldier.baseBalance).toBe(85);
+    expect(shortSoldier.balance).toBe(85);
     shortSoldier.next(dataPointShort3);
-    expect(shortSoldier.baseBalance).toBe(85);
+    expect(shortSoldier.balance).toBe(85);
   });
   it("updates the profit loss when it continues", () => {
     shortSoldier.next(dataPointShort3);
@@ -85,7 +85,7 @@ describe("Soldier playing short", () => {
   });
   it("updates the base balance when it extracts", () => {
     shortSoldier.next(dataPointShort2);
-    expect(shortSoldier.baseBalance).toBe(120);
+    expect(shortSoldier.balance).toBe(120);
   });
   it("updates the collateral when it extracts", () => {
     shortSoldier.next(dataPointShort2);
@@ -101,7 +101,7 @@ describe("Soldier playing short", () => {
   });
   it("updates the base balance when it dies", () => {
     shortSoldier.next(dataPointShort1);
-    expect(shortSoldier.baseBalance).toBe(95);
+    expect(shortSoldier.balance).toBe(95);
   });
   it("updates the collateral when it dies", () => {
     shortSoldier.next(dataPointShort1);

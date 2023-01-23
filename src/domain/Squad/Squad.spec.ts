@@ -67,25 +67,26 @@ describe("Squad playing long", () => {
   });
   it("kills a soldier if the price falls below the stop loss", () => {
     squad.next(dataPointLong1); // deploy soldier at 100
-    squad.next(dataPointLong2); // deploy soldier at 100, kill both soldiers at 93, stop loss is 5%
+    squad.next(dataPointLong2); // deploy soldier at 100, kill both soldiers at 93, stop loss price is 95
     expect(squad.soldiers.length).toBe(0);
     expect(squad.deadSoldiers.length).toBe(2);
   });
   it("extracts a soldier if the price rises above the exit price", () => {
-    squad.next(dataPointLong1);
-    squad.next(dataPointLong3);
+    squad.next(dataPointLong1); // deploy soldier at 100
+    squad.next(dataPointLong3); // deploy soldier at 100, extract both soldiers at 120, exit price is 120
     expect(squad.soldiers.length).toBe(0);
     expect(squad.extractedSoldiers.length).toBe(2);
   });
-  xit("keeps the soldier alive if the price stays within the stop loss and exit price", () => {
+  it("keeps the soldier alive if the price stays within the stop loss and exit price", () => {
     squad.next(dataPointLong1);
     squad.next(dataPointLong1);
-    expect(squad.soldiers.length).toBe(1);
+    expect(squad.soldiers.length).toBe(2);
   });
-  xit("increases the lifespan when it continues", () => {
+  it("increases the lifespan when it continues", () => {
     squad.next(dataPointLong1);
     squad.next(dataPointLong1);
-    expect(squad.soldiers[0].lifeSpan).toBe(1);
+    expect(squad.soldiers[0].lifeSpan).toBe(2); // first soldier lived for 2 intervals
+    expect(squad.soldiers[1].lifeSpan).toBe(1); // second soldier lived for 1 interval
   });
   xit("increases the wallet when it extracts", () => {
     squad.next(dataPointLong1);

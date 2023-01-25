@@ -5,14 +5,12 @@ import { RawDataPoint, IDataPoint } from "../../types/domain";
 import { IBacktester, IBacktesterConfig } from "./Backtester.d";
 
 /**
- * Backtest class, used to simulate a trading strategy, and return wallet data and indicators.
+ * Backtest class, used to simulate a trading strategy.
  * @param {Array} marketData - Array of market data with order [timestamp, open, high, low, close, volume]
  * @param {Object} config - Object of configuration options
- * @param {Number} config.margin - Margin to use for the simulation
  * @param {Object} wallet - Object of wallet data
- * @returns {Object} - Object of wallet data
  */
-class Backtest implements IBacktester {
+export class Backtester implements IBacktester {
   marketData: RawDataPoint[];
   config: IBacktesterConfig;
   wallet: Wallet;
@@ -81,5 +79,3 @@ class Backtest implements IBacktester {
     }
   }
 }
-
-module.exports = Backtest;

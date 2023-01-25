@@ -1,4 +1,4 @@
-const marketDataRaw = require("./dataSets/coinGecko/ETHOHLC.json");
+const marketDataRaw = require("../dataSets/coinGecko/ETHOHLC.json");
 const Backtest = require("./domain/BackTester");
 
 // get the last 1440 candles

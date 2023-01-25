@@ -14,11 +14,20 @@ export interface IDataPoint {
   volume?: number;
 }
 
-export interface IRawDataPoint {
-  date: number;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  volume?: number;
-}
+export type RawDataPointWithVolume = [
+  number,
+  number,
+  number,
+  number,
+  number,
+  number
+];
+export type RawDataPointWithoutVolume = [
+  number,
+  number,
+  number,
+  number,
+  number
+];
+
+export type RawDataPoint = RawDataPointWithVolume | RawDataPointWithoutVolume;

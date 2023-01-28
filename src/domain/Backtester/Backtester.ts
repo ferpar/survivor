@@ -29,12 +29,6 @@ export class Backtester implements IBacktester {
       quoteCurrency: initialWallet.quoteCurrency,
     });
     this.squads = [];
-
-    // initialize the wallet
-    this.wallet.deposit(
-      initialWallet.baseAmount,
-      new Date(this.marketData[0][0])
-    );
   }
 
   init() {

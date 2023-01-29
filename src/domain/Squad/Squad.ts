@@ -52,7 +52,11 @@ export class Squad implements ISquad {
           exitPricePercent: this.exitPricePercent,
         });
     // update wallet
-    this.wallet.buy(this.soldierInvestment, open, date);
+    if (this.short) {
+      this.wallet.short(this.soldierInvestment, open, date);
+    } else {
+      this.wallet.buy(this.soldierInvestment, open, date);
+    }
 
     // add soldier to squad
     this.soldiers.push(soldier);
@@ -62,7 +66,7 @@ export class Squad implements ISquad {
     const { close, date } = dataPoint;
     const deploymentPossible =
       this.soldiers.length < this.maxSoldiers &&
-      this.wallet.baseBalance > this.soldierInvestment;
+      this.wallet.baseBalance - this.wallet.collateral > this.soldierInvestment;
     // run the next simulation cycle
     if (deploymentPossible) {
       this.deploySoldier(dataPoint);
@@ -70,21 +74,39 @@ export class Squad implements ISquad {
     for (const soldier of this.soldiers) {
       soldier.next(dataPoint);
       if (!soldier.alive) {
-        this.wallet.sell(
-          soldier.balance,
-          soldier.stopLoss,
-          date,
-          soldier.entryPrice
-        );
+        if (this.short) {
+          this.wallet.shortCover(
+            soldier.balance,
+            soldier.stopLoss,
+            date,
+            soldier.entryPrice
+          );
+        } else {
+          this.wallet.sell(
+            soldier.balance,
+            soldier.stopLoss,
+            date,
+            soldier.entryPrice
+          );
+        }
         this.deadSoldiers.push(soldier);
       }
       if (soldier.extracted) {
-        this.wallet.sell(
-          soldier.balance,
-          soldier.exitPrice,
-          date,
-          soldier.entryPrice
-        );
+        if (this.short) {
+          this.wallet.shortCover(
+            soldier.balance,
+            soldier.exitPrice,
+            date,
+            soldier.entryPrice
+          );
+        } else {
+          this.wallet.sell(
+            soldier.balance,
+            soldier.exitPrice,
+            date,
+            soldier.entryPrice
+          );
+        }
         this.extractedSoldiers.push(soldier);
       }
     }

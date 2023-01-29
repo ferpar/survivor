@@ -7,7 +7,7 @@
     "test": "jest --config ./jest.config.json",
     "test:watch": "jest --config ./jest.config.json --watch",
     "build": "tsc",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/server.ts",
     "backtest": "ts-node src/main.ts backtest",
     "margin-heatmap": "ts-node src/main.ts margin-heatmap"
   },

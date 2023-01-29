@@ -76,11 +76,11 @@ export class Wallet implements IWallet {
   ) {
     // calculate profit in base currency
     const profit = (baseAmount * (entryPrice - price)) / entryPrice;
-    // update collateral in base currency
+    // update collateral in base currency (release collateral)
     this.collateral -= baseAmount;
-    // update short balance in quote currency
+    // update short balance in quote currency (close out position)
     this.shortBalance -= baseAmount / entryPrice;
-    // update baseBalance in base currency
+    // update baseBalance in base currency (add profit) and balance in base currency
     this.baseBalance += profit;
     this.balance += profit;
 

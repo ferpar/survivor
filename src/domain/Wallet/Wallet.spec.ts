@@ -74,4 +74,36 @@ describe("Wallet", () => {
     wallet.deposit(100, new Date());
     expect(wallet.balance).toEqual(1450);
   });
+  it("should add no quoteBalance after a short sell of 5 ETH at 100 USD each", () => {
+    const priorBalance = wallet.quoteBalance;
+    wallet.short(500, 100, new Date());
+    expect(wallet.quoteBalance).toEqual(priorBalance);
+  });
+  it("should add 5 ETH to shortBalance after a short sell of 5 ETH at 100 USD each", () => {
+    const priorBalance = wallet.shortBalance;
+    wallet.short(500, 100, new Date());
+    expect(wallet.shortBalance).toEqual(priorBalance + 5);
+  });
+  it("should not modify the baseBalance after a short sell of 5 ETH at 100 USD each", () => {
+    const priorBalance = wallet.baseBalance;
+    wallet.short(500, 100, new Date());
+    expect(wallet.baseBalance).toEqual(priorBalance);
+  });
+  it("should have the same balance after a short sell of 5 ETH at 100 USD each", () => {
+    const priorBalance = wallet.balance;
+    wallet.short(500, 100, new Date());
+    expect(wallet.balance).toEqual(priorBalance);
+  });
+  it("should increase the balance after a short sell of 5 ETH at 100 USD each, and a shortCover of 5 ETH at 80 USD each", () => {
+    const priorBalance = wallet.balance;
+    wallet.short(500, 100, new Date());
+    wallet.shortCover(500, 80, new Date(), 100);
+    expect(wallet.balance).toEqual(priorBalance + 100);
+  });
+  it("should decrease the balance after a short sell of 5 ETH at 100 USD each, and a shortCover of 5 ETH at 105 USD each", () => {
+    const priorBalance = wallet.balance;
+    wallet.short(500, 100, new Date());
+    wallet.shortCover(500, 105, new Date(), 100);
+    expect(wallet.balance).toEqual(priorBalance - 25);
+  });
 });

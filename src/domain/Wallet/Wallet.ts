@@ -6,6 +6,8 @@ export class Wallet implements IWallet {
   balance: number;
   baseBalance: number;
   quoteBalance: number;
+  collateral: number;
+  shortBalance: number;
   transactions: any[];
 
   constructor({
@@ -16,9 +18,11 @@ export class Wallet implements IWallet {
   }: IWalletConfig) {
     this.baseCurrency = baseCurrency;
     this.quoteCurrency = quoteCurrency;
-    this.balance = 0;
+    this.balance = 0; // setting to zero while no transactions have been made (no price data)
+    this.collateral = 0;
     this.baseBalance = baseAmount;
     this.quoteBalance = quoteAmount;
+    this.shortBalance = 0;
     this.transactions = [];
   }
 
@@ -37,6 +41,51 @@ export class Wallet implements IWallet {
     this.balance = this.baseBalance + this.quoteBalance * price;
     this.transactions.push({
       type: "sell",
+      baseAmount,
+      price,
+      entryPrice,
+      date,
+    });
+  }
+
+  /**
+   * @param {number} baseAmount - The amount of base currency to short
+   * @param {number} price - The price of the base currency in quote currency
+   * @param {Date} date - The date of the transaction
+   * @returns {void}
+   * */
+  short(baseAmount: number, price: number, date: Date): void {
+    // update collateral in base currency
+    this.collateral += baseAmount;
+    // update short balance in quote currency
+    this.shortBalance += baseAmount / price;
+    this.transactions.push({ type: "short", baseAmount, price, date });
+  }
+
+  /**
+   * @param {number} baseAmount  - The amount of base currency to short
+   * @param {number} price - The price of the base currency in quote currency
+   * @param {Date} date - The date of the transaction
+   * @param {number} entryPrice - The price at which the short was opened
+   */
+  shortCover(
+    baseAmount: number,
+    price: number,
+    date: Date,
+    entryPrice: number
+  ) {
+    // calculate profit in base currency
+    const profit = (baseAmount * (entryPrice - price)) / entryPrice;
+    // update collateral in base currency
+    this.collateral -= baseAmount;
+    // update short balance in quote currency
+    this.shortBalance -= baseAmount / entryPrice;
+    // update baseBalance in base currency
+    this.baseBalance += profit;
+    this.balance += profit;
+
+    this.transactions.push({
+      type: "shortCover",
       baseAmount,
       price,
       entryPrice,

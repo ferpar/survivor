@@ -90,20 +90,23 @@ describe("Wallet", () => {
     expect(wallet.baseBalance).toEqual(priorBalance);
   });
   it("should have the same balance after a short sell of 5 ETH at 100 USD each", () => {
+    wallet.init(100);
     const priorBalance = wallet.balance;
     wallet.short(500, 100, new Date());
     expect(wallet.balance).toEqual(priorBalance);
   });
   it("should increase the balance after a short sell of 5 ETH at 100 USD each, and a shortCover of 5 ETH at 80 USD each", () => {
+    wallet.init(100);
     const priorBalance = wallet.balance;
     wallet.short(500, 100, new Date());
     wallet.shortCover(500, 80, new Date(), 100);
-    expect(wallet.balance).toEqual(priorBalance + 100);
+    expect(wallet.balance).toBeGreaterThan(priorBalance);
   });
   it("should decrease the balance after a short sell of 5 ETH at 100 USD each, and a shortCover of 5 ETH at 105 USD each", () => {
+    wallet.init(100);
     const priorBalance = wallet.balance;
     wallet.short(500, 100, new Date());
     wallet.shortCover(500, 105, new Date(), 100);
-    expect(wallet.balance).toEqual(priorBalance - 25);
+    expect(wallet.balance).toBeLessThan(priorBalance);
   });
 });

@@ -6,6 +6,7 @@ export interface IWallet {
   quoteBalance: number;
   collateral: number;
   shortBalance: number;
+  lastPrice: number;
   transactions: any[];
   buy(baseAmount: number, price: number, date: Date): void;
   sell(baseAmount: number, price: number, date: Date, entryPrice: number): void;

@@ -8,6 +8,7 @@ export class Wallet implements IWallet {
   quoteBalance: number;
   collateral: number;
   shortBalance: number;
+  lastPrice: number;
   transactions: any[];
 
   constructor({
@@ -23,7 +24,13 @@ export class Wallet implements IWallet {
     this.baseBalance = baseAmount;
     this.quoteBalance = quoteAmount;
     this.shortBalance = 0;
+    this.lastPrice = 0;
     this.transactions = [];
+  }
+
+  init(price: number) {
+    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.lastPrice = price;
   }
 
   buy(baseAmount: number, price: number, date: Date) {
@@ -31,14 +38,15 @@ export class Wallet implements IWallet {
     // normally we would expect to work with the quoteAmount
     this.baseBalance -= baseAmount;
     this.quoteBalance += baseAmount / price;
-    this.balance = this.baseBalance + this.quoteBalance * price;
     this.transactions.push({ type: "buy", baseAmount, price, date });
+
+    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.lastPrice = price;
   }
 
   sell(baseAmount: number, price: number, date: Date, entryPrice: number) {
     this.baseBalance += baseAmount;
     this.quoteBalance -= baseAmount / price;
-    this.balance = this.baseBalance + this.quoteBalance * price;
     this.transactions.push({
       type: "sell",
       baseAmount,
@@ -46,6 +54,9 @@ export class Wallet implements IWallet {
       entryPrice,
       date,
     });
+
+    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.lastPrice = price;
   }
 
   /**
@@ -60,6 +71,9 @@ export class Wallet implements IWallet {
     // update short balance in quote currency
     this.shortBalance += baseAmount / price;
     this.transactions.push({ type: "short", baseAmount, price, date });
+
+    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.lastPrice = price;
   }
 
   /**
@@ -91,6 +105,9 @@ export class Wallet implements IWallet {
       entryPrice,
       date,
     });
+
+    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.lastPrice = price;
   }
 
   deposit(baseAmount: number, date: Date) {

@@ -20,7 +20,7 @@ if (process.argv[2] === "margin-heatmap") {
       marginLimit: 0.2,
       maxSoldiers: 10,
       amountPerSoldier: 100,
-      short: false,
+      short: true,
     };
     const marginPercentages = {
       limit: Array.from({ length: 100 }, (_, i) => i + 1),
@@ -48,8 +48,16 @@ if (process.argv[2] === "margin-heatmap") {
       const backtestResults = backtest.run();
       return {
         config: backtestResults?.config,
-        initialTransaction: backtestResults?.wallet?.transactions[0],
-        wallet: { ...backtestResults?.wallet },
+        wallet: {
+          balance: backtestResults?.wallet?.balance,
+          baseBalance: backtestResults?.wallet?.baseBalance,
+          quoteBalance: backtestResults?.wallet?.quoteBalance,
+        },
+        soldiers: {
+          soldiers: backtestResults.squads[0].soldiers.length,
+          deadSoldiers: backtestResults.squads[0].deadSoldiers.length,
+          extractedSoldiers: backtestResults.squads[0].extractedSoldiers.length,
+        },
       };
     });
 
@@ -73,11 +81,11 @@ if (process.argv[2] === "backtest") {
     const backtest = new Backtester(
       marketDataSlice,
       {
-        marginStop: 0.05,
-        marginLimit: 0.2,
+        marginStop: 0.1,
+        marginLimit: 0.17,
         maxSoldiers: 10,
         amountPerSoldier: 100,
-        short: false,
+        short: true,
       },
       initialWallet
     );

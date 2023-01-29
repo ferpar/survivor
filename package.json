@@ -8,7 +8,8 @@
     "test:watch": "jest --config ./jest.config.json --watch",
     "build": "tsc",
     "start": "ts-node src/index.ts",
-    "backtest": "ts-node src/main.ts backtest"
+    "backtest": "ts-node src/main.ts backtest",
+    "margin-heatmap": "ts-node src/main.ts margin-heatmap"
   },
   "keywords": [],
   "author": "Fernando <ferp@protonmail.ch>",

@@ -82,7 +82,7 @@ export class Wallet implements IWallet {
     this.shortBalance -= baseAmount / entryPrice;
     // update baseBalance in base currency (add profit) and balance in base currency
     this.baseBalance += profit;
-    this.balance += profit;
+    this.balance = this.baseBalance + this.quoteBalance * price;
 
     this.transactions.push({
       type: "shortCover",

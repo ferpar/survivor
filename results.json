@@ -851,1457 +851,1446 @@
   "wallet": {
     "baseCurrency": "usd",
     "quoteCurrency": "eth",
-    "balance": 964.3988261025929,
-    "baseBalance": 307,
-    "quoteBalance": 0.5385424970120365,
+    "balance": 1490.5000000000043,
+    "collateral": 710,
+    "baseBalance": 1490.5000000000043,
+    "quoteBalance": 0,
+    "shortBalance": 0.7732398189625331,
     "transactions": [
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3159.27,
         "date": "2021-09-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2939.74,
         "date": "2021-09-30T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3013.49,
         "date": "2021-10-03T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3233.714,
         "entryPrice": 2939.74,
         "date": "2021-10-03T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3314.839,
         "entryPrice": 3013.49,
         "date": "2021-10-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3426.39,
         "date": "2021-10-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3475.197,
         "entryPrice": 3159.27,
         "date": "2021-10-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3594.92,
         "date": "2021-10-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3537.84,
         "date": "2021-10-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3769.029,
         "entryPrice": 3426.39,
         "date": "2021-10-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3885.64,
         "date": "2021-10-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3884.59,
         "date": "2021-10-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3954.4120000000003,
         "entryPrice": 3594.92,
         "date": "2021-10-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3891.6240000000003,
         "entryPrice": 3537.84,
         "date": "2021-10-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4179.44,
         "date": "2021-10-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3944.09,
         "date": "2021-10-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 4274.204000000001,
         "entryPrice": 3885.64,
         "date": "2021-10-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 4273.049000000001,
         "entryPrice": 3884.59,
         "date": "2021-10-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 4338.499000000001,
         "entryPrice": 3944.09,
         "date": "2021-10-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4292.04,
         "date": "2021-11-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4607.7,
         "date": "2021-11-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 4597.384,
         "entryPrice": 4179.44,
         "date": "2021-11-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4626.63,
         "date": "2021-11-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 4721.244000000001,
         "entryPrice": 4292.04,
         "date": "2021-11-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4732.92,
         "date": "2021-11-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4583.21,
         "date": "2021-11-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4317.6,
         "date": "2021-11-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4355.42,
         "date": "2021-11-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4084.09,
         "date": "2021-11-30T00:00:00.000Z"
       },
       {
-        "type": "buy",
-        "baseAmount": 100,
-        "price": 4637.12,
-        "date": "2021-12-03T00:00:00.000Z"
-      },
-      {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 4492.499000000001,
         "entryPrice": 4084.09,
         "date": "2021-12-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4240.16,
         "date": "2021-12-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3928.3235999999997,
         "entryPrice": 4732.92,
         "date": "2021-12-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4079.81,
         "date": "2021-12-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3824.3909999999996,
         "entryPrice": 4607.7,
         "date": "2021-12-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3840.1029,
         "entryPrice": 4626.63,
         "date": "2021-12-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3804.0643,
         "entryPrice": 4583.21,
         "date": "2021-12-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
-        "baseAmount": 117,
-        "price": 3848.8095999999996,
-        "entryPrice": 4637.12,
-        "date": "2021-12-15T00:00:00.000Z"
-      },
-      {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4015.72,
         "date": "2021-12-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3928.84,
         "date": "2021-12-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4113.53,
         "date": "2021-12-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 4045.05,
         "date": "2021-12-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3686.4,
         "date": "2022-01-03T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3583.608,
         "entryPrice": 4317.6,
         "date": "2022-01-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3614.9986,
         "entryPrice": 4355.42,
         "date": "2022-01-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3519.3327999999997,
         "entryPrice": 4240.16,
         "date": "2022-01-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3201.79,
         "date": "2022-01-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3386.2423,
         "entryPrice": 4079.81,
         "date": "2022-01-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3333.0476,
         "entryPrice": 4015.72,
         "date": "2022-01-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3260.9372,
         "entryPrice": 3928.84,
         "date": "2022-01-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3414.2299,
         "entryPrice": 4113.53,
         "date": "2022-01-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3357.3915,
         "entryPrice": 4045.05,
         "date": "2022-01-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3246.41,
         "date": "2022-01-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3331.25,
         "date": "2022-01-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3097.02,
         "date": "2022-01-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 3059.712,
         "entryPrice": 3686.4,
         "date": "2022-01-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2657.4856999999997,
         "entryPrice": 3201.79,
         "date": "2022-01-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2694.5202999999997,
         "entryPrice": 3246.41,
         "date": "2022-01-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2764.9375,
         "entryPrice": 3331.25,
         "date": "2022-01-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2570.5265999999997,
         "entryPrice": 3097.02,
         "date": "2022-01-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2537.84,
         "date": "2022-01-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2411.86,
         "date": "2022-01-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2689.22,
         "date": "2022-02-03T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 2791.6240000000003,
         "entryPrice": 2537.84,
         "date": "2022-02-03T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 2653.0460000000003,
         "entryPrice": 2411.86,
         "date": "2022-02-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2667.26,
         "date": "2022-02-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 2958.142,
         "entryPrice": 2689.22,
         "date": "2022-02-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 2933.9860000000003,
         "entryPrice": 2667.26,
         "date": "2022-02-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3149.95,
         "date": "2022-02-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2930.56,
         "date": "2022-02-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3179.3,
         "date": "2022-02-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2768.97,
         "date": "2022-02-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2614.4584999999997,
         "entryPrice": 3149.95,
         "date": "2022-02-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2638.819,
         "entryPrice": 3179.3,
         "date": "2022-02-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2594.7,
         "date": "2022-02-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2629.48,
         "date": "2022-02-28T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 2854.17,
         "entryPrice": 2594.7,
         "date": "2022-02-28T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 2892.4280000000003,
         "entryPrice": 2629.48,
         "date": "2022-02-28T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2836.91,
         "date": "2022-03-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2498.66,
         "date": "2022-03-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2562.83,
         "date": "2022-03-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2620.36,
         "date": "2022-03-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 2748.526,
         "entryPrice": 2498.66,
         "date": "2022-03-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 2819.1130000000003,
         "entryPrice": 2562.83,
         "date": "2022-03-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 2882.396,
         "entryPrice": 2620.36,
         "date": "2022-03-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2947.23,
         "date": "2022-03-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3028.84,
         "date": "2022-03-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 3045.867,
         "entryPrice": 2768.97,
         "date": "2022-03-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 3120.601,
         "entryPrice": 2836.91,
         "date": "2022-03-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3285.17,
         "date": "2022-03-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 3223.616,
         "entryPrice": 2930.56,
         "date": "2022-03-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 3241.9530000000004,
         "entryPrice": 2947.23,
         "date": "2022-03-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 3331.7240000000006,
         "entryPrice": 3028.84,
         "date": "2022-03-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3283.3,
         "date": "2022-04-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3521.58,
         "date": "2022-04-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3232.83,
         "date": "2022-04-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2992.7,
         "date": "2022-04-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3045.43,
         "date": "2022-04-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 3104.69,
         "date": "2022-04-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2940.69,
         "date": "2022-04-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2922.9114,
         "entryPrice": 3521.58,
         "date": "2022-04-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2889.59,
         "date": "2022-04-30T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2738.17,
         "date": "2022-05-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2786.05,
         "date": "2022-05-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2726.6911,
         "entryPrice": 3285.17,
         "date": "2022-05-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2725.139,
         "entryPrice": 3283.3,
         "date": "2022-05-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2641.23,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117.00000000000001,
         "price": 2683.2488999999996,
         "entryPrice": 3232.83,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2483.941,
         "entryPrice": 2992.7,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2527.7068999999997,
         "entryPrice": 3045.43,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2576.8927,
         "entryPrice": 3104.69,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2440.7727,
         "entryPrice": 2940.69,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2398.3597,
         "entryPrice": 2889.59,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117.00000000000001,
         "price": 2272.6811,
         "entryPrice": 2738.17,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2312.4215,
         "entryPrice": 2786.05,
         "date": "2022-05-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2080.91,
         "date": "2022-05-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 2192.2209,
         "entryPrice": 2641.23,
         "date": "2022-05-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2147.05,
         "date": "2022-05-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 2023.85,
         "date": "2022-05-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1974.58,
         "date": "2022-05-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1724.88,
         "date": "2022-05-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1727.1553,
         "entryPrice": 2080.91,
         "date": "2022-05-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1782.0515,
         "entryPrice": 2147.05,
         "date": "2022-05-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1897.3680000000002,
         "entryPrice": 1724.88,
         "date": "2022-05-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1944.08,
         "date": "2022-06-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1776.98,
         "date": "2022-06-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1818.39,
         "date": "2022-06-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1679.7955,
         "entryPrice": 2023.85,
         "date": "2022-06-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1530.04,
         "date": "2022-06-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1638.9014,
         "entryPrice": 1974.58,
         "date": "2022-06-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1613.5864,
         "entryPrice": 1944.08,
         "date": "2022-06-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1474.8934,
         "entryPrice": 1776.98,
         "date": "2022-06-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1509.2637,
         "entryPrice": 1818.39,
         "date": "2022-06-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1269.9332,
         "entryPrice": 1530.04,
         "date": "2022-06-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1230.36,
         "date": "2022-06-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1021.1987999999999,
         "entryPrice": 1230.36,
         "date": "2022-06-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1125.75,
         "date": "2022-06-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1144.48,
         "date": "2022-06-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1238.325,
         "entryPrice": 1125.75,
         "date": "2022-06-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1194.22,
         "date": "2022-06-30T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1057.63,
         "date": "2022-07-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1074.61,
         "date": "2022-07-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1163.3930000000003,
         "entryPrice": 1057.63,
         "date": "2022-07-07T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1182.071,
         "entryPrice": 1074.61,
         "date": "2022-07-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1240.38,
         "date": "2022-07-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1097.45,
         "date": "2022-07-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1234.1,
         "date": "2022-07-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1258.928,
         "entryPrice": 1144.48,
         "date": "2022-07-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1313.642,
         "entryPrice": 1194.22,
         "date": "2022-07-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1364.4180000000001,
         "entryPrice": 1240.38,
         "date": "2022-07-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1207.1950000000002,
         "entryPrice": 1097.45,
         "date": "2022-07-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1357.51,
         "entryPrice": 1234.1,
         "date": "2022-07-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1542.63,
         "date": "2022-07-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1552.5,
         "date": "2022-07-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1636.95,
         "date": "2022-07-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1696.8930000000003,
         "entryPrice": 1542.63,
         "date": "2022-07-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1707.7500000000002,
         "entryPrice": 1552.5,
         "date": "2022-07-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1682.01,
         "date": "2022-08-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1621.34,
         "date": "2022-08-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1699.01,
         "date": "2022-08-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1800.6450000000002,
         "entryPrice": 1636.95,
         "date": "2022-08-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1850.2110000000002,
         "entryPrice": 1682.01,
         "date": "2022-08-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1783.4740000000002,
         "entryPrice": 1621.34,
         "date": "2022-08-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1881.43,
         "date": "2022-08-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1868.911,
         "entryPrice": 1699.01,
         "date": "2022-08-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1908.28,
         "date": "2022-08-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1618.53,
         "date": "2022-08-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1583.8724,
         "entryPrice": 1908.28,
         "date": "2022-08-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1665.79,
         "date": "2022-08-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1561.5869,
         "entryPrice": 1881.43,
         "date": "2022-08-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1496.06,
         "date": "2022-08-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1552.56,
         "date": "2022-09-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1555.67,
         "date": "2022-09-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1629.88,
         "date": "2022-09-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1645.6660000000002,
         "entryPrice": 1496.06,
         "date": "2022-09-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1707.816,
         "entryPrice": 1552.56,
         "date": "2022-09-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1711.2370000000003,
         "entryPrice": 1555.67,
         "date": "2022-09-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1761.32,
         "date": "2022-09-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1472,
         "date": "2022-09-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1343.3799,
         "entryPrice": 1618.53,
         "date": "2022-09-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1382.6056999999998,
         "entryPrice": 1665.79,
         "date": "2022-09-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1352.8004,
         "entryPrice": 1629.88,
         "date": "2022-09-19T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1461.8955999999998,
         "entryPrice": 1761.32,
         "date": "2022-09-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1379.92,
         "date": "2022-09-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1329.56,
         "date": "2022-09-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1331.15,
         "date": "2022-09-30T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1329.15,
         "date": "2022-10-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1323.5,
         "date": "2022-10-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1324.89,
         "date": "2022-10-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1279.88,
         "date": "2022-10-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1275.69,
         "date": "2022-10-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1284.65,
         "date": "2022-10-23T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1517.9120000000003,
         "entryPrice": 1379.92,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1462.516,
         "entryPrice": 1329.56,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1464.2650000000003,
         "entryPrice": 1331.15,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1462.0650000000003,
         "entryPrice": 1329.15,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1455.8500000000001,
         "entryPrice": 1323.5,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1457.3790000000001,
         "entryPrice": 1324.89,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1407.8680000000002,
         "entryPrice": 1279.88,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1403.2590000000002,
         "entryPrice": 1275.69,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1413.1150000000002,
         "entryPrice": 1284.65,
         "date": "2022-10-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1514.86,
         "date": "2022-10-31T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 90,
         "price": 1619.2,
         "entryPrice": 1472,
         "date": "2022-10-31T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1572.98,
         "date": "2022-11-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1531.11,
         "date": "2022-11-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1569.99,
         "date": "2022-11-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1257.3337999999999,
         "entryPrice": 1514.86,
         "date": "2022-11-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1305.5734,
         "entryPrice": 1572.98,
         "date": "2022-11-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1270.8212999999998,
         "entryPrice": 1531.11,
         "date": "2022-11-11T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 117,
         "price": 1303.0917,
         "entryPrice": 1569.99,
         "date": "2022-11-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1293.91,
         "date": "2022-11-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1252.71,
         "date": "2022-11-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1218.89,
         "date": "2022-11-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1184.46,
         "date": "2022-11-27T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1196.2,
         "date": "2022-11-30T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1298.94,
         "date": "2022-12-03T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1243.04,
         "date": "2022-12-07T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1233.63,
         "date": "2022-12-11T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1264.32,
         "date": "2022-12-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1302.9060000000002,
         "entryPrice": 1184.46,
         "date": "2022-12-15T00:00:00.000Z"
       },
       {
-        "type": "sell",
+        "type": "shortCover",
         "baseAmount": 89.99999999999999,
         "price": 1315.8200000000002,
         "entryPrice": 1196.2,
         "date": "2022-12-15T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1263.75,
         "date": "2022-12-19T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1166.99,
         "date": "2022-12-23T00:00:00.000Z"
       },
       {
-        "type": "buy",
+        "type": "short",
         "baseAmount": 100,
         "price": 1220.7,
         "date": "2022-12-27T00:00:00.000Z"
@@ -2314,1457 +2303,1446 @@
       "wallet": {
         "baseCurrency": "usd",
         "quoteCurrency": "eth",
-        "balance": 964.3988261025929,
-        "baseBalance": 307,
-        "quoteBalance": 0.5385424970120365,
+        "balance": 1490.5000000000043,
+        "collateral": 710,
+        "baseBalance": 1490.5000000000043,
+        "quoteBalance": 0,
+        "shortBalance": 0.7732398189625331,
         "transactions": [
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3159.27,
             "date": "2021-09-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2939.74,
             "date": "2021-09-30T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3013.49,
             "date": "2021-10-03T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3233.714,
             "entryPrice": 2939.74,
             "date": "2021-10-03T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3314.839,
             "entryPrice": 3013.49,
             "date": "2021-10-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3426.39,
             "date": "2021-10-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3475.197,
             "entryPrice": 3159.27,
             "date": "2021-10-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3594.92,
             "date": "2021-10-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3537.84,
             "date": "2021-10-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3769.029,
             "entryPrice": 3426.39,
             "date": "2021-10-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3885.64,
             "date": "2021-10-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3884.59,
             "date": "2021-10-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3954.4120000000003,
             "entryPrice": 3594.92,
             "date": "2021-10-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3891.6240000000003,
             "entryPrice": 3537.84,
             "date": "2021-10-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4179.44,
             "date": "2021-10-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3944.09,
             "date": "2021-10-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 4274.204000000001,
             "entryPrice": 3885.64,
             "date": "2021-10-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 4273.049000000001,
             "entryPrice": 3884.59,
             "date": "2021-10-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 4338.499000000001,
             "entryPrice": 3944.09,
             "date": "2021-10-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4292.04,
             "date": "2021-11-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4607.7,
             "date": "2021-11-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 4597.384,
             "entryPrice": 4179.44,
             "date": "2021-11-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4626.63,
             "date": "2021-11-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 4721.244000000001,
             "entryPrice": 4292.04,
             "date": "2021-11-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4732.92,
             "date": "2021-11-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4583.21,
             "date": "2021-11-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4317.6,
             "date": "2021-11-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4355.42,
             "date": "2021-11-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4084.09,
             "date": "2021-11-30T00:00:00.000Z"
           },
           {
-            "type": "buy",
-            "baseAmount": 100,
-            "price": 4637.12,
-            "date": "2021-12-03T00:00:00.000Z"
-          },
-          {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 4492.499000000001,
             "entryPrice": 4084.09,
             "date": "2021-12-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4240.16,
             "date": "2021-12-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3928.3235999999997,
             "entryPrice": 4732.92,
             "date": "2021-12-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4079.81,
             "date": "2021-12-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3824.3909999999996,
             "entryPrice": 4607.7,
             "date": "2021-12-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3840.1029,
             "entryPrice": 4626.63,
             "date": "2021-12-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3804.0643,
             "entryPrice": 4583.21,
             "date": "2021-12-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
-            "baseAmount": 117,
-            "price": 3848.8095999999996,
-            "entryPrice": 4637.12,
-            "date": "2021-12-15T00:00:00.000Z"
-          },
-          {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4015.72,
             "date": "2021-12-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3928.84,
             "date": "2021-12-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4113.53,
             "date": "2021-12-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 4045.05,
             "date": "2021-12-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3686.4,
             "date": "2022-01-03T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3583.608,
             "entryPrice": 4317.6,
             "date": "2022-01-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3614.9986,
             "entryPrice": 4355.42,
             "date": "2022-01-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3519.3327999999997,
             "entryPrice": 4240.16,
             "date": "2022-01-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3201.79,
             "date": "2022-01-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3386.2423,
             "entryPrice": 4079.81,
             "date": "2022-01-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3333.0476,
             "entryPrice": 4015.72,
             "date": "2022-01-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3260.9372,
             "entryPrice": 3928.84,
             "date": "2022-01-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3414.2299,
             "entryPrice": 4113.53,
             "date": "2022-01-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3357.3915,
             "entryPrice": 4045.05,
             "date": "2022-01-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3246.41,
             "date": "2022-01-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3331.25,
             "date": "2022-01-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3097.02,
             "date": "2022-01-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 3059.712,
             "entryPrice": 3686.4,
             "date": "2022-01-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2657.4856999999997,
             "entryPrice": 3201.79,
             "date": "2022-01-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2694.5202999999997,
             "entryPrice": 3246.41,
             "date": "2022-01-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2764.9375,
             "entryPrice": 3331.25,
             "date": "2022-01-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2570.5265999999997,
             "entryPrice": 3097.02,
             "date": "2022-01-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2537.84,
             "date": "2022-01-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2411.86,
             "date": "2022-01-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2689.22,
             "date": "2022-02-03T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 2791.6240000000003,
             "entryPrice": 2537.84,
             "date": "2022-02-03T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 2653.0460000000003,
             "entryPrice": 2411.86,
             "date": "2022-02-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2667.26,
             "date": "2022-02-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 2958.142,
             "entryPrice": 2689.22,
             "date": "2022-02-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 2933.9860000000003,
             "entryPrice": 2667.26,
             "date": "2022-02-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3149.95,
             "date": "2022-02-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2930.56,
             "date": "2022-02-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3179.3,
             "date": "2022-02-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2768.97,
             "date": "2022-02-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2614.4584999999997,
             "entryPrice": 3149.95,
             "date": "2022-02-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2638.819,
             "entryPrice": 3179.3,
             "date": "2022-02-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2594.7,
             "date": "2022-02-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2629.48,
             "date": "2022-02-28T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 2854.17,
             "entryPrice": 2594.7,
             "date": "2022-02-28T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 2892.4280000000003,
             "entryPrice": 2629.48,
             "date": "2022-02-28T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2836.91,
             "date": "2022-03-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2498.66,
             "date": "2022-03-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2562.83,
             "date": "2022-03-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2620.36,
             "date": "2022-03-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 2748.526,
             "entryPrice": 2498.66,
             "date": "2022-03-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 2819.1130000000003,
             "entryPrice": 2562.83,
             "date": "2022-03-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 2882.396,
             "entryPrice": 2620.36,
             "date": "2022-03-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2947.23,
             "date": "2022-03-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3028.84,
             "date": "2022-03-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 3045.867,
             "entryPrice": 2768.97,
             "date": "2022-03-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 3120.601,
             "entryPrice": 2836.91,
             "date": "2022-03-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3285.17,
             "date": "2022-03-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 3223.616,
             "entryPrice": 2930.56,
             "date": "2022-03-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 3241.9530000000004,
             "entryPrice": 2947.23,
             "date": "2022-03-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 3331.7240000000006,
             "entryPrice": 3028.84,
             "date": "2022-03-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3283.3,
             "date": "2022-04-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3521.58,
             "date": "2022-04-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3232.83,
             "date": "2022-04-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2992.7,
             "date": "2022-04-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3045.43,
             "date": "2022-04-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 3104.69,
             "date": "2022-04-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2940.69,
             "date": "2022-04-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2922.9114,
             "entryPrice": 3521.58,
             "date": "2022-04-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2889.59,
             "date": "2022-04-30T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2738.17,
             "date": "2022-05-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2786.05,
             "date": "2022-05-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2726.6911,
             "entryPrice": 3285.17,
             "date": "2022-05-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2725.139,
             "entryPrice": 3283.3,
             "date": "2022-05-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2641.23,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117.00000000000001,
             "price": 2683.2488999999996,
             "entryPrice": 3232.83,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2483.941,
             "entryPrice": 2992.7,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2527.7068999999997,
             "entryPrice": 3045.43,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2576.8927,
             "entryPrice": 3104.69,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2440.7727,
             "entryPrice": 2940.69,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2398.3597,
             "entryPrice": 2889.59,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117.00000000000001,
             "price": 2272.6811,
             "entryPrice": 2738.17,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2312.4215,
             "entryPrice": 2786.05,
             "date": "2022-05-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2080.91,
             "date": "2022-05-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 2192.2209,
             "entryPrice": 2641.23,
             "date": "2022-05-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2147.05,
             "date": "2022-05-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 2023.85,
             "date": "2022-05-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1974.58,
             "date": "2022-05-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1724.88,
             "date": "2022-05-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1727.1553,
             "entryPrice": 2080.91,
             "date": "2022-05-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1782.0515,
             "entryPrice": 2147.05,
             "date": "2022-05-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1897.3680000000002,
             "entryPrice": 1724.88,
             "date": "2022-05-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1944.08,
             "date": "2022-06-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1776.98,
             "date": "2022-06-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1818.39,
             "date": "2022-06-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1679.7955,
             "entryPrice": 2023.85,
             "date": "2022-06-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1530.04,
             "date": "2022-06-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1638.9014,
             "entryPrice": 1974.58,
             "date": "2022-06-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1613.5864,
             "entryPrice": 1944.08,
             "date": "2022-06-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1474.8934,
             "entryPrice": 1776.98,
             "date": "2022-06-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1509.2637,
             "entryPrice": 1818.39,
             "date": "2022-06-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1269.9332,
             "entryPrice": 1530.04,
             "date": "2022-06-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1230.36,
             "date": "2022-06-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1021.1987999999999,
             "entryPrice": 1230.36,
             "date": "2022-06-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1125.75,
             "date": "2022-06-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1144.48,
             "date": "2022-06-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1238.325,
             "entryPrice": 1125.75,
             "date": "2022-06-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1194.22,
             "date": "2022-06-30T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1057.63,
             "date": "2022-07-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1074.61,
             "date": "2022-07-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1163.3930000000003,
             "entryPrice": 1057.63,
             "date": "2022-07-07T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1182.071,
             "entryPrice": 1074.61,
             "date": "2022-07-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1240.38,
             "date": "2022-07-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1097.45,
             "date": "2022-07-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1234.1,
             "date": "2022-07-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1258.928,
             "entryPrice": 1144.48,
             "date": "2022-07-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1313.642,
             "entryPrice": 1194.22,
             "date": "2022-07-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1364.4180000000001,
             "entryPrice": 1240.38,
             "date": "2022-07-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1207.1950000000002,
             "entryPrice": 1097.45,
             "date": "2022-07-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1357.51,
             "entryPrice": 1234.1,
             "date": "2022-07-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1542.63,
             "date": "2022-07-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1552.5,
             "date": "2022-07-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1636.95,
             "date": "2022-07-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1696.8930000000003,
             "entryPrice": 1542.63,
             "date": "2022-07-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1707.7500000000002,
             "entryPrice": 1552.5,
             "date": "2022-07-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1682.01,
             "date": "2022-08-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1621.34,
             "date": "2022-08-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1699.01,
             "date": "2022-08-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1800.6450000000002,
             "entryPrice": 1636.95,
             "date": "2022-08-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1850.2110000000002,
             "entryPrice": 1682.01,
             "date": "2022-08-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1783.4740000000002,
             "entryPrice": 1621.34,
             "date": "2022-08-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1881.43,
             "date": "2022-08-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1868.911,
             "entryPrice": 1699.01,
             "date": "2022-08-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1908.28,
             "date": "2022-08-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1618.53,
             "date": "2022-08-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1583.8724,
             "entryPrice": 1908.28,
             "date": "2022-08-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1665.79,
             "date": "2022-08-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1561.5869,
             "entryPrice": 1881.43,
             "date": "2022-08-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1496.06,
             "date": "2022-08-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1552.56,
             "date": "2022-09-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1555.67,
             "date": "2022-09-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1629.88,
             "date": "2022-09-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1645.6660000000002,
             "entryPrice": 1496.06,
             "date": "2022-09-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1707.816,
             "entryPrice": 1552.56,
             "date": "2022-09-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1711.2370000000003,
             "entryPrice": 1555.67,
             "date": "2022-09-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1761.32,
             "date": "2022-09-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1472,
             "date": "2022-09-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1343.3799,
             "entryPrice": 1618.53,
             "date": "2022-09-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1382.6056999999998,
             "entryPrice": 1665.79,
             "date": "2022-09-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1352.8004,
             "entryPrice": 1629.88,
             "date": "2022-09-19T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1461.8955999999998,
             "entryPrice": 1761.32,
             "date": "2022-09-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1379.92,
             "date": "2022-09-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1329.56,
             "date": "2022-09-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1331.15,
             "date": "2022-09-30T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1329.15,
             "date": "2022-10-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1323.5,
             "date": "2022-10-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1324.89,
             "date": "2022-10-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1279.88,
             "date": "2022-10-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1275.69,
             "date": "2022-10-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1284.65,
             "date": "2022-10-23T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1517.9120000000003,
             "entryPrice": 1379.92,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1462.516,
             "entryPrice": 1329.56,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1464.2650000000003,
             "entryPrice": 1331.15,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1462.0650000000003,
             "entryPrice": 1329.15,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1455.8500000000001,
             "entryPrice": 1323.5,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1457.3790000000001,
             "entryPrice": 1324.89,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1407.8680000000002,
             "entryPrice": 1279.88,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1403.2590000000002,
             "entryPrice": 1275.69,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1413.1150000000002,
             "entryPrice": 1284.65,
             "date": "2022-10-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1514.86,
             "date": "2022-10-31T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 90,
             "price": 1619.2,
             "entryPrice": 1472,
             "date": "2022-10-31T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1572.98,
             "date": "2022-11-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1531.11,
             "date": "2022-11-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1569.99,
             "date": "2022-11-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1257.3337999999999,
             "entryPrice": 1514.86,
             "date": "2022-11-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1305.5734,
             "entryPrice": 1572.98,
             "date": "2022-11-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1270.8212999999998,
             "entryPrice": 1531.11,
             "date": "2022-11-11T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 117,
             "price": 1303.0917,
             "entryPrice": 1569.99,
             "date": "2022-11-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1293.91,
             "date": "2022-11-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1252.71,
             "date": "2022-11-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1218.89,
             "date": "2022-11-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1184.46,
             "date": "2022-11-27T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1196.2,
             "date": "2022-11-30T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1298.94,
             "date": "2022-12-03T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1243.04,
             "date": "2022-12-07T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1233.63,
             "date": "2022-12-11T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1264.32,
             "date": "2022-12-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1302.9060000000002,
             "entryPrice": 1184.46,
             "date": "2022-12-15T00:00:00.000Z"
           },
           {
-            "type": "sell",
+            "type": "shortCover",
             "baseAmount": 89.99999999999999,
             "price": 1315.8200000000002,
             "entryPrice": 1196.2,
             "date": "2022-12-15T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1263.75,
             "date": "2022-12-19T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1166.99,
             "date": "2022-12-23T00:00:00.000Z"
           },
           {
-            "type": "buy",
+            "type": "short",
             "baseAmount": 100,
             "price": 1220.7,
             "date": "2022-12-27T00:00:00.000Z"
@@ -4827,21 +4805,6 @@
           "lifeSpan": 7,
           "balance": 117,
           "profitLoss": 17,
-          "quoteDebt": 0,
-          "collateral": 0
-        },
-        {
-          "quoteAmount": 0.021565109378234765,
-          "entryPrice": 4637.12,
-          "stopLoss": 5100.832,
-          "exitPrice": 3848.8095999999996,
-          "alive": true,
-          "diedAt": null,
-          "extracted": true,
-          "extractedAt": "2021-12-15T00:00:00.000Z",
-          "lifeSpan": 3,
-          "balance": 117,
-          "profitLoss": 17.000000000000007,
           "quoteDebt": 0,
           "collateral": 0
         },

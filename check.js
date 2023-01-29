@@ -1,3 +1,4 @@
+// meant to be opened in REPL to inspect the data
 const marketData = require("./marginHeatmap.json");
 
 const results = marketData.backtestResults.map((market) => {

@@ -102,6 +102,15 @@ describe("Wallet", () => {
     wallet.shortCover(500, 80, new Date(), 100);
     expect(wallet.balance).toBeGreaterThan(priorBalance);
   });
+  it("if the wallet also holds quote, its depreciation should also be factored into the balance", () => {
+    wallet.init(100);
+    const priorBalance = wallet.balance;
+    wallet.short(500, 100, new Date());
+    wallet.shortCover(500, 80, new Date(), 100);
+    const profit = (500 * (100 - 80)) / 100;
+    const depreciation = wallet.quoteBalance * 20;
+    expect(wallet.balance).toEqual(priorBalance + profit - depreciation);
+  });
   it("should decrease the balance after a short sell of 5 ETH at 100 USD each, and a shortCover of 5 ETH at 105 USD each", () => {
     wallet.init(100);
     const priorBalance = wallet.balance;

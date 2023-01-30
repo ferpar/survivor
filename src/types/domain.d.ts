@@ -31,3 +31,25 @@ export type RawDataPointWithoutVolume = [
 ];
 
 export type RawDataPoint = RawDataPointWithVolume | RawDataPointWithoutVolume;
+
+interface IBacktestInputs {
+  baseAmount?: number;
+  startTimestamp: number;
+  quoteAmount?: number;
+  endTimestamp: number;
+  marginStop: number;
+  marginLimit: number;
+  maxSoldiers?: number;
+  amountPerSoldier?: number;
+  short?: boolean;
+}
+
+interface IMarginHeatmapInputs {
+  baseAmount?: number;
+  startTimestamp: number;
+  quoteAmount?: number;
+  endTimestamp: number;
+  maxSoldiers?: number;
+  amountPerSoldier?: number;
+  short?: boolean;
+}

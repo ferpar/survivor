@@ -51,5 +51,5 @@ interface IMarginHeatmapInputs {
   endTimestamp: number;
   maxSoldiers?: number;
   amountPerSoldier?: number;
-  short?: boolean;
+  short: boolean;
 }

@@ -11,7 +11,7 @@ export function getMarginHeatmap({
   endTimestamp,
   maxSoldiers = 10,
   amountPerSoldier = 100,
-  short = false,
+  short,
 }: IMarginHeatmapInputs) {
   // slicing market data by date
   const marketDataSlice = marketDataRaw.filter((datapoint: RawDataPoint) => {

@@ -13,6 +13,7 @@ export class Shorter extends Soldier {
     this.exitPrice = this.entryPrice * (1 - config.exitPricePercent);
   }
   next(datapoint: IDataPoint) {
+    //public
     const { date, high, low, close } = datapoint;
     // run the next simulation cycle
     if (this.alive && !this.extracted) {

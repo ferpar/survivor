@@ -33,6 +33,7 @@ export class Soldier implements ISoldier {
     this.profitLoss = 0;
   }
   next(dataPoint: IDataPoint) {
+    //public
     const { date, high, low, close } = dataPoint;
     // run the next simulation cycle
     if (this.alive && !this.extracted) {

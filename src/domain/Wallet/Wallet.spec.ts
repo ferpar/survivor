@@ -100,6 +100,7 @@ describe("Wallet", () => {
     const priorBalance = wallet.balance;
     wallet.short(500, 100, new Date());
     wallet.shortCover(500, 80, new Date(), 100);
+    wallet.init(100);
     expect(wallet.balance).toBeGreaterThan(priorBalance);
   });
   it("if the wallet also holds quote, its depreciation should also be factored into the balance", () => {

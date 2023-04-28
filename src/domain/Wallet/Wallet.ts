@@ -22,8 +22,8 @@ export class Wallet implements IWallet {
     this.balance = 0; // setting to zero while no transactions have been made (no price data)
     this.collateral = 0;
     this.baseBalance = baseAmount;
-    this.quoteBalance = quoteAmount;
-    this.shortBalance = 0;
+    this.quoteBalance = quoteAmount; // amount of quote currency held
+    this.shortBalance = 0; // amount of quote currency shorted, needs to be covered (repaid)
     this.lastPrice = 0;
     this.transactions = [];
   }

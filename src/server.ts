@@ -75,7 +75,10 @@ app.get(
       short: short === "false" ? false : true,
     });
     // an example url to test this route:
-    // http://localhost:3000/marginheatmap?startTimestamp=1449446400000&endTimestamp=1659225600000&baseAmount=1000&quoteAmount=0&maxSoldiers=10&amountPerSoldier=100&short=false
+    /* http://localhost:3000/marginheatmap
+    ?startTimestamp=1449446400000&endTimestamp=1659225600000&
+    baseAmount=1000&quoteAmount=0&maxSoldiers=10&
+    amountPerSoldier=100&short=false */
 
     res.json(marginHeatmap);
   }

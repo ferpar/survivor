@@ -166,29 +166,8 @@ describe("Squad playing short", () => {
     expect(squad.soldiers[1].lifeSpan).toBe(1); // second soldier lived for 1 interval
   });
   it("increases the wallet when it extracts", () => {
-    console.log(
-      squad.wallet.balance,
-      squad.wallet.quoteBalance,
-      squad.wallet.baseBalance,
-      squad.wallet.collateral,
-      squad.wallet.shortBalance
-    );
     squad.next(dataPointShort1); // deploy soldier at 100
-    console.log(
-      squad.wallet.balance,
-      squad.wallet.quoteBalance,
-      squad.wallet.baseBalance,
-      squad.wallet.collateral,
-      squad.wallet.shortBalance
-    );
     squad.next(dataPointShort3); // deploy soldier at 100, extract both soldiers at 80, exit price is 80
-    console.log(
-      squad.wallet.balance,
-      squad.wallet.quoteBalance,
-      squad.wallet.baseBalance,
-      squad.wallet.collateral,
-      squad.wallet.shortBalance
-    );
     expect(squad.wallet.baseBalance).toBe(1040);
   });
   it("restore the baseBalance of the wallet when soldier die", () => {
@@ -196,8 +175,10 @@ describe("Squad playing short", () => {
     squad.next(dataPointShort2); // deploy soldier at 100, kill both soldiers at 110, stop loss price is 105
     expect(squad.wallet.baseBalance).toBe(990);
   });
-  it("decreases the wallet when it deploys", () => {
+  it("increases the collateral and shortBalance when it deploys, the baseBalance remains untouched", () => {
     squad.next(dataPointShort1); //
-    expect(squad.wallet.baseBalance).toBe(900);
+    expect(squad.wallet.baseBalance).toBe(1000);
+    expect(squad.wallet.collateral).toBe(100);
+    expect(squad.wallet.shortBalance).toBe(1);
   });
 });

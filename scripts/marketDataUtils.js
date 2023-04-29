@@ -47,7 +47,7 @@ async function storeResponse(response, filename) {
   try {
     fs.writeFileSync(filePath, JSON.stringify(response.data));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 

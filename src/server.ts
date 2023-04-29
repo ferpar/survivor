@@ -62,9 +62,6 @@ app.get(
     const amountPerSoldier = req.query.amountPerSoldier;
     const short = req.query.short;
 
-    console.log("short", short);
-    console.log(Boolean(short));
-
     const marginHeatmap = await getMarginHeatmap({
       baseAmount: Number(baseAmount),
       quoteAmount: Number(quoteAmount),

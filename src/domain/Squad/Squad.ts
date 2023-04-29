@@ -76,7 +76,7 @@ export class Squad implements ISquad {
       if (!soldier.alive) {
         if (this.short) {
           this.wallet.shortCover(
-            soldier.balance,
+            soldier.quoteAmount * soldier.entryPrice, //making sure we pass the initial investment
             soldier.stopLoss,
             date,
             soldier.entryPrice
@@ -94,7 +94,7 @@ export class Squad implements ISquad {
       if (soldier.extracted) {
         if (this.short) {
           this.wallet.shortCover(
-            soldier.balance,
+            soldier.quoteAmount * soldier.entryPrice, //making sure we pass the initial investment
             soldier.exitPrice,
             date,
             soldier.entryPrice

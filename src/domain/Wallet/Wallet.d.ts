@@ -15,7 +15,8 @@ export interface IWallet {
     baseAmount: number,
     price: number,
     date: Date,
-    entryPrice: number
+    entryPrice: number,
+    quoteAmount: number
   ): void;
   deposit(baseAmount: number, date: Date): void;
   withdraw(baseAmount: number, date: Date): void;

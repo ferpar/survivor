@@ -38,7 +38,7 @@ app.get("/backtest", async (req: express.Request, res: express.Response) => {
     marginLimit: Number(limit),
     maxSoldiers: Number(maxSoldiers),
     amountPerSoldier: Number(amountPerSoldier),
-    short: Boolean(short),
+    short: "false" === short ? false : true,
   });
   // an example url to test this route:
   /* http://localhost:3000/backtest

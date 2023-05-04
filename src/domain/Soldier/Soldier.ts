@@ -1,7 +1,9 @@
 import { ISoldier } from "./Soldier.d";
 import { ISoldierConfig, IDataPoint } from "../../types/domain";
+import crypto from "crypto";
 
 export class Soldier implements ISoldier {
+  id: string;
   quoteAmount: number;
   entryPrice: number;
   stopLoss: number; // this is the price at which the soldier will die
@@ -20,6 +22,7 @@ export class Soldier implements ISoldier {
     stopLossPercent,
     exitPricePercent,
   }: ISoldierConfig) {
+    this.id = crypto.randomUUID();
     this.quoteAmount = amount / entryPrice;
     this.entryPrice = entryPrice;
     this.stopLoss = entryPrice * (1 - stopLossPercent);

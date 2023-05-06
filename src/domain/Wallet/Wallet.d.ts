@@ -20,6 +20,7 @@ export interface IWallet {
   ): void;
   deposit(baseAmount: number, date: Date): void;
   withdraw(baseAmount: number, date: Date): void;
+  updateLedger(date: Date, price?: number): void;
 }
 
 export interface IWalletConfig {

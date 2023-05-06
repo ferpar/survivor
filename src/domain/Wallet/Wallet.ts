@@ -10,6 +10,7 @@ export class Wallet implements IWallet {
   shortBalance: number;
   lastPrice: number;
   transactions: any[];
+  ledger: any[];
 
   constructor({
     baseCurrency = "USD",
@@ -26,11 +27,13 @@ export class Wallet implements IWallet {
     this.shortBalance = 0; // amount of quote currency shorted, needs to be covered (repaid)
     this.lastPrice = 0;
     this.transactions = [];
+    this.ledger = [];
   }
 
   init(price: number) {
     this.balance = this.baseBalance + this.quoteBalance * price;
     this.lastPrice = price;
+    this.updateLedger(new Date(), price);
   }
 
   buy(baseAmount: number, price: number, date: Date) {
@@ -42,6 +45,7 @@ export class Wallet implements IWallet {
 
     this.balance = this.baseBalance + this.quoteBalance * price;
     this.lastPrice = price;
+    this.updateLedger(date, price);
   }
 
   sell(baseAmount: number, price: number, date: Date, entryPrice: number) {
@@ -57,6 +61,7 @@ export class Wallet implements IWallet {
 
     this.balance = this.baseBalance + this.quoteBalance * price;
     this.lastPrice = price;
+    this.updateLedger(date, price);
   }
 
   /**
@@ -74,6 +79,7 @@ export class Wallet implements IWallet {
 
     this.balance = this.baseBalance + this.quoteBalance * price;
     this.lastPrice = price;
+    this.updateLedger(date, price);
   }
 
   /**
@@ -108,6 +114,7 @@ export class Wallet implements IWallet {
 
     this.balance = this.baseBalance + this.quoteBalance * price;
     this.lastPrice = price;
+    this.updateLedger(date, price);
   }
 
   deposit(baseAmount: number, date: Date) {
@@ -115,6 +122,7 @@ export class Wallet implements IWallet {
     this.balance += baseAmount;
     this.baseBalance += baseAmount;
     this.transactions.push({ type: "deposit", baseAmount, date });
+    this.updateLedger(date);
   }
 
   withdraw(baseAmount: number, date: Date) {
@@ -122,5 +130,23 @@ export class Wallet implements IWallet {
     this.balance -= baseAmount;
     this.baseBalance -= baseAmount;
     this.transactions.push({ type: "withdraw", baseAmount, date });
+    this.ledger.push({
+      base: this.baseBalance,
+      quote: this.quoteBalance,
+      price: null, // no price data
+      balance: this.balance,
+      date: date,
+    });
+    this.updateLedger(date);
+  }
+
+  updateLedger(date: Date, price?: number) {
+    this.ledger.push({
+      base: this.baseBalance,
+      quote: this.quoteBalance,
+      price: price ? price : null, // no price data
+      balance: this.balance,
+      date: date,
+    });
   }
 }

@@ -1,9 +1,11 @@
 import { ISoldier } from "./Soldier.d";
 import { ISoldierConfig, IDataPoint } from "../../types/domain";
 import crypto from "crypto";
+import { faker } from "@faker-js/faker";
 
 export class Soldier implements ISoldier {
   id: string;
+  name: string;
   quoteAmount: number;
   entryPrice: number;
   stopLoss: number; // this is the price at which the soldier will die
@@ -23,6 +25,7 @@ export class Soldier implements ISoldier {
     exitPricePercent,
   }: ISoldierConfig) {
     this.id = crypto.randomUUID();
+    this.name = faker.person.fullName({ sex: "male" });
     this.quoteAmount = amount / entryPrice;
     this.entryPrice = entryPrice;
     this.stopLoss = entryPrice * (1 - stopLossPercent);

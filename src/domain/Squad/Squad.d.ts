@@ -1,6 +1,8 @@
 import { IDataPoint } from "../../types/domain";
 
 export interface ISquad {
+  id: string;
+  name: string;
   maxSoldiers: number;
   wallet: Wallet;
   soldierInvestment: number;

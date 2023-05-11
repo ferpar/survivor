@@ -3,9 +3,13 @@ import { Shorter } from "../Soldier/Shorter/Shorter";
 import { Wallet } from "../Wallet/Wallet";
 import { IDataPoint } from "../../types/domain";
 import { ISquad, ISquadConfig } from "./Squad.d";
+import crypto from "crypto";
+import { StringColorFormat, faker } from "@faker-js/faker";
 
 // takes care of deploying soldiers
 export class Squad implements ISquad {
+  id: string;
+  name: string;
   maxSoldiers: number;
   wallet: Wallet;
   soldierInvestment: number;
@@ -24,6 +28,8 @@ export class Squad implements ISquad {
     exitPricePercent = 0.2,
     short = false,
   }: ISquadConfig) {
+    this.id = crypto.randomUUID();
+    this.name = faker.location.county();
     this.maxSoldiers = maxSoldiers;
     this.wallet = wallet;
     this.soldierInvestment = soldierInvestment;

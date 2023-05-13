@@ -6,7 +6,7 @@ require("dotenv").config({ path: "../.env" });
 
 const CoinAPIKey = process.env.COIN_API_KEY;
 console.log(CoinAPIKey);
-const CoinAPIURL = "https://rest.coinapi.io/v1/exchanges";
+const CoinAPIURL = "https://rest.coinapi.io/v1/assets";
 
 const apiCall = axios.create({
   headers: {
@@ -16,8 +16,8 @@ const apiCall = axios.create({
   },
 });
 
-//get all exchanges using axios
-async function getExchanges() {
+//get all assets using axios
+async function getAssets() {
   try {
     const response = await apiCall(CoinAPIURL);
     return response.data;
@@ -28,7 +28,7 @@ async function getExchanges() {
 
 // store the data in the filesystem
 async function storeResponse(response, filename) {
-  const filePath = path.join(__dirname, ".", "coinAPI", filename);
+  const filePath = path.join(__dirname, ".", "coinAPIData", filename);
   try {
     fs.writeFileSync(filePath, JSON.stringify(response));
   } catch (error) {
@@ -37,9 +37,9 @@ async function storeResponse(response, filename) {
 }
 
 async function main() {
-  const allExchanges = await getExchanges();
-  console.log(allExchanges);
-  await storeResponse(allExchanges, "allExchanges.json");
+  const allAssets = await getAssets();
+  console.log(allAssets);
+  await storeResponse(allAssets, "allAssets.json");
   console.log("Done!");
 }
 

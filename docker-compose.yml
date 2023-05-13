@@ -22,3 +22,11 @@ services:
       - DB_USER=postgres
       - DB_PASSWORD=postgres
       - DB_NAME=postgres
+# increase resource limits for backend, TODO: deploy with docker swarm
+# using separate services in the meantime
+    deploy:
+      resources:
+        limits:
+          cpus: '6'
+          memory: 6G
+

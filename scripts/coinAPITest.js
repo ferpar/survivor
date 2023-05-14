@@ -6,7 +6,8 @@ require("dotenv").config({ path: "../.env" });
 
 const CoinAPIKey = process.env.COIN_API_KEY;
 console.log(CoinAPIKey);
-const CoinAPIURL = "https://rest.coinapi.io/v1/assets";
+const CoinAPIURL =
+  "https://rest.coinapi.io/v1/ohlcv/BINANCE_SPOT_BTC_USDT/history?period_id=1MTH&time_start=2017-08-17T00:00:00&limit=2600";
 
 const apiCall = axios.create({
   headers: {
@@ -16,10 +17,11 @@ const apiCall = axios.create({
   },
 });
 
-//get all assets using axios
-async function getAssets() {
+//get ohlcv using axios
+async function getOHLCV() {
   try {
     const response = await apiCall(CoinAPIURL);
+    console.log(response.headers);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -37,9 +39,9 @@ async function storeResponse(response, filename) {
 }
 
 async function main() {
-  const allAssets = await getAssets();
-  console.log(allAssets);
-  await storeResponse(allAssets, "allAssets.json");
+  const allOHLCV = await getOHLCV();
+  console.log(allOHLCV);
+  await storeResponse(allOHLCV, "BINANCE_BTC_USDT_MONTH.json");
   console.log("Done!");
 }
 

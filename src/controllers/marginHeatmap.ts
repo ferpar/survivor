@@ -1,8 +1,21 @@
-const marketDataRaw = require("../../dataSets/coinGecko/ETHOHLC.json");
+// const marketDataRaw = require("../../dataSets/coinGecko/ETHOHLC.json");
+const marketDataCoinAPI = require("../../dataSets/coinAPI/BINANCE_BTC_USDT_DAY.json");
+
 import { Backtester } from "../domain/Backtester/Backtester";
 import { IBacktesterConfig } from "../domain/Backtester/Backtester.d";
 import { RawDataPoint } from "../types/domain";
 import { IMarginHeatmapInputs } from "../types/domain";
+
+const marketDataRaw = marketDataCoinAPI.map((datapoint: any) => {
+  return [
+    new Date(datapoint.time_period_start).getTime(),
+    datapoint.price_open,
+    datapoint.price_high,
+    datapoint.price_low,
+    datapoint.price_close,
+    datapoint.volume_traded,
+  ];
+});
 
 export function getMarginHeatmap({
   baseAmount = 1000,

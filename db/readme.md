@@ -10,7 +10,7 @@ The postgres database is held within a docker container, it has an initializatio
 
 ### with no available information
 
-You should find some seed data for exchanges, assets, periods and symbols in the seeds folder, otherwise download the from the coinAPI API. Then run the following commands:
+You should find some seed data for exchanges, assets, periods and symbols in the seeds folder, otherwise download it from the coinAPI API. Then run the following commands:
 
 - docker-compose up --build
 - node seedDatabase.js
@@ -18,3 +18,9 @@ You should find some seed data for exchanges, assets, periods and symbols in the
 ### reset database
 
 - sudo rm -rf data (removes data folder used to store the database files via a volume)
+
+## Adding Market Data
+
+This can be done via the following script (albeit modifying the source for the .json files). The table structured is meant for OHLCV gathered from the coinAPI API.
+
+- node seedOHLCV.js

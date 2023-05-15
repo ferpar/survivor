@@ -53,8 +53,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
     );
 
     CREATE TABLE symbols (
-      id SERIAL PRIMARY KEY,
-      symbol_id VARCHAR NOT NULL,
+      symbol_id VARCHAR PRIMARY KEY,
       exchange_id VARCHAR NOT NULL,
       symbol_type VARCHAR NOT NULL,
       asset_id_base VARCHAR,
@@ -86,19 +85,19 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
 
     CREATE TABLE ohlcv (
       id SERIAL PRIMARY KEY,
-      symbol_id INT NOT NULL,
+      symbol_id VARCHAR NOT NULL,
       period_id VARCHAR(10) NOT NULL,
       time_period_start TIMESTAMP NOT NULL,
       time_period_end TIMESTAMP NOT NULL,
       time_open TIMESTAMP NOT NULL,
       time_close TIMESTAMP NOT NULL,
-      price_open NUMERIC(20, 2),
-      price_high NUMERIC(20, 2),
-      price_low NUMERIC(20, 2),
-      price_close NUMERIC(20, 2),
-      volume_traded NUMERIC(20, 9),
+      price_open NUMERIC(30, 2),
+      price_high NUMERIC(30, 2),
+      price_low NUMERIC(30, 2),
+      price_close NUMERIC(30, 2),
+      volume_traded NUMERIC(30, 9),
       trades_count INT,
-      FOREIGN KEY (symbol_id) REFERENCES symbols (id),
+      FOREIGN KEY (symbol_id) REFERENCES symbols (symbol_id),
       FOREIGN KEY (period_id) REFERENCES periods (period_id)
     );
 

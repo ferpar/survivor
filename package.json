@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "8.0.0",
+    "@types/pg": "8.6.6",
     "axios": "1.2.1",
     "ccxt": "3.0.101",
     "dotenv": "16.0.3",

@@ -30,7 +30,7 @@ export async function getBacktestResults({
 
   const initialWallet = {
     baseCurrency: "usd",
-    quoteCurrency: "eth",
+    quoteCurrency: "btc",
     baseAmount: baseAmount,
     quoteAmount: quoteAmount,
   };

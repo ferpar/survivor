@@ -5,19 +5,12 @@ import { Backtester } from "../domain/Backtester/Backtester";
 import { IBacktesterConfig } from "../domain/Backtester/Backtester.d";
 import { RawDataPoint } from "../types/domain";
 import { IMarginHeatmapInputs } from "../types/domain";
+import { marketDb } from "../db/marketDb";
+import { coinAPIToArray } from "../helpers";
 
-const marketDataRaw = marketDataCoinAPI.map((datapoint: any) => {
-  return [
-    new Date(datapoint.time_period_start).getTime(),
-    datapoint.price_open,
-    datapoint.price_high,
-    datapoint.price_low,
-    datapoint.price_close,
-    datapoint.volume_traded,
-  ];
-});
+const marketDataRawDefault = marketDataCoinAPI;
 
-export function getMarginHeatmap({
+export async function getMarginHeatmap({
   baseAmount = 1000,
   startTimestamp,
   quoteAmount = 0,
@@ -26,14 +19,20 @@ export function getMarginHeatmap({
   amountPerSoldier = 100,
   short,
 }: IMarginHeatmapInputs) {
-  // slicing market data by date
-  const marketDataSlice = marketDataRaw.filter((datapoint: RawDataPoint) => {
+  // retrieve market data from db and put in marketDataRaw variable
+  const marketDataRaw =
+    (await marketDb.getMarketData("BINANCE_SPOT_BTC_USDT", "1DAY")).rows ||
+    marketDataRawDefault;
+  const marketData = coinAPIToArray(marketDataRaw);
+
+  const marketDataSlice = marketData.filter((datapoint: RawDataPoint) => {
     return datapoint[0] >= startTimestamp && datapoint[0] <= endTimestamp;
   });
+
   // setting initial wallet
   const initialWallet = {
     baseCurrency: "usd",
-    quoteCurrency: "eth",
+    quoteCurrency: "btc",
     baseAmount: baseAmount,
     quoteAmount: quoteAmount,
   };

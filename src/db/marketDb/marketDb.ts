@@ -1,10 +1,27 @@
 import { SqlDbAdapter } from "../SqlDbAdapter";
 import { availablePeriods } from "../../constants";
+import { QueryResult } from "pg";
 
-export default class marketDb {
+export interface IMarketDb {
+  db: SqlDbAdapter;
+  getExchanges: () => Promise<QueryResult>;
+  getPeriods: () => Promise<QueryResult>;
+  getMarketData: (symbol_id: string, period_id: string) => Promise<QueryResult>;
+  getAssets: () => Promise<QueryResult>;
+  getSymbolsByExchange: (exchange_id: string) => Promise<QueryResult>;
+  getSymblosByBaseAsset: (asset_id: string) => Promise<QueryResult>;
+}
+
+export default class MarketDb implements MarketDb {
   db: SqlDbAdapter;
   constructor(db: SqlDbAdapter) {
     this.db = db;
+  }
+
+  getMarketsWithData() {
+    return this.db.query(
+      "SELECT DISTINCT t.symbol_id, t.period_id, s.exchange_id, s.symbol_type, s.asset_id_base, s.asset_id_quote FROM ohlcv t LEFT JOIN symbols s ON t.symbol_id = s.symbol_id"
+    );
   }
 
   getExchanges() {

@@ -1,17 +1,18 @@
 import { SqlDbAdapter } from "./SqlDbAdapter";
+import { QueryResult, PoolClient } from "pg";
 
 const { SqlDbAdapter } = require("./SqlDbAdapter");
 
 const { Pool } = require("pg");
 // get env variables using dotenv
 const path = require("path");
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_DATABASE,
-  password: process.env.DB_PASS,
+  password: process.env.DB_PASSWORD,
   port: Number(process.env.DB_PORT),
 });
 
@@ -26,7 +27,7 @@ export default class PostgresDbAdapter implements SqlDbAdapter {
     this.pool = pool;
   }
   // to run queries on the pool
-  query(text: any, params?: any[], callback?: any): Promise<any[]> {
+  query(text: any, params?: any[], callback?: any): Promise<QueryResult> {
     return pool.query(text, params, callback);
   }
   // to shutdown the pool
@@ -34,7 +35,7 @@ export default class PostgresDbAdapter implements SqlDbAdapter {
     return pool.end();
   }
   // to get a new client from the pool
-  connect(): Promise<any> {
+  connect(): Promise<PoolClient> {
     return pool.connect();
   }
 }

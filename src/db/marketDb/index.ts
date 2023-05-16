@@ -1,6 +1,6 @@
-import marketDb from "./marketDb";
+import MarketDb from "./marketDb";
 import PostgresDbAdapter from "../PostgresDbAdapter";
 
 const db = new PostgresDbAdapter();
 
-export const marketsDb = new marketDb(db);
+export const marketDb = new MarketDb(db);

@@ -1,20 +1,11 @@
-// const marketDataRaw = require("../../dataSets/coinGecko/ETHOHLC.json");
 const marketDataCoinAPI = require("../../dataSets/coinAPI/BINANCE_BTC_USDT_DAY.json");
-
 import { Backtester } from "../domain/Backtester/Backtester";
 import { RawDataPoint } from "../types/domain";
 import { IBacktestInputs } from "../types/domain";
+import { marketDb } from "../db/marketDb";
+import { coinAPIToArray } from "../helpers";
 
-const marketDataRaw = marketDataCoinAPI.map((datapoint: any) => {
-  return [
-    new Date(datapoint.time_period_start).getTime(),
-    datapoint.price_open,
-    datapoint.price_high,
-    datapoint.price_low,
-    datapoint.price_close,
-    datapoint.volume_traded,
-  ];
-});
+const marketDataRawDefault = marketDataCoinAPI;
 
 export async function getBacktestResults({
   baseAmount = 1000,
@@ -27,7 +18,13 @@ export async function getBacktestResults({
   amountPerSoldier = 100,
   short = false,
 }: IBacktestInputs) {
-  const marketDataSlice = marketDataRaw.filter((datapoint: RawDataPoint) => {
+  // retrieve market data from db and put in marketDataRaw variable
+  const marketDataRaw =
+    (await marketDb.getMarketData("BINANCE_SPOT_BTC_USDT", "1DAY")).rows ||
+    marketDataRawDefault;
+  const marketData = coinAPIToArray(marketDataRaw);
+
+  const marketDataSlice = marketData.filter((datapoint: RawDataPoint) => {
     return datapoint[0] >= startTimestamp && datapoint[0] <= endTimestamp;
   });
 

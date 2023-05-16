@@ -1,5 +1,7 @@
+import { QueryResult, PoolClient } from "pg";
+
 export interface SqlDbAdapter {
-  query: (text: string, params?: any[], callback?: any) => Promise<any[]>;
+  query: (text: string, params?: any[], callback?: any) => Promise<QueryResult>;
   shutdown: () => Promise<void>;
-  connect: () => Promise<any>;
+  connect: () => Promise<PoolClient>;
 }

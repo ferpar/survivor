@@ -26,7 +26,7 @@ export default class PostgresDbAdapter implements SqlDbAdapter {
     this.pool = pool;
   }
   // to run queries on the pool
-  query(text: any, params?: any[], callback?: any): Promise<any[] {
+  query(text: any, params?: any[], callback?: any): Promise<any[]> {
     return pool.query(text, params, callback);
   }
   // to shutdown the pool

@@ -34,10 +34,10 @@ const config: IBacktesterConfig = {
 };
 
 const initialWallet: IWalletConfig = {
-  baseAmount: 1000,
-  quoteAmount: 0,
-  baseCurrency: "ETH",
-  quoteCurrency: "USD",
+  quoteAmount: 1000,
+  baseAmount: 0,
+  quoteCurrency: "ETH",
+  baseCurrency: "USD",
 };
 
 let backtester: IBacktester;

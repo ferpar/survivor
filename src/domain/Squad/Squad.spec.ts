@@ -5,10 +5,10 @@ import { ISquadConfig } from "./Squad.d";
 import { IWalletConfig } from "../Wallet/Wallet.d";
 
 const initialWallet: IWalletConfig = {
-  baseCurrency: "USD",
-  quoteCurrency: "ETH",
-  baseAmount: 1000,
-  quoteAmount: 0,
+  quoteCurrency: "USD",
+  baseCurrency: "ETH",
+  quoteAmount: 1000,
+  baseAmount: 0,
 };
 
 const squadConfig = (): ISquadConfig => ({
@@ -122,7 +122,7 @@ describe("Squad playing long", () => {
     squad.next(dataPointLong3); // deploy soldier at 100, extract both soldiers at 120, exit price is 120
     expect(squad.wallet.quoteBalance).toBe(1040);
   });
-  it("restore the baseBalance of the wallet when soldier die", () => {
+  it("restore the quoteBalance of the wallet when soldier die", () => {
     squad.next(dataPointLong1); // deploy soldier at 100
     squad.next(dataPointLong2); // deploy soldier at 100, kill both soldiers at 93, stop loss price is 95
     expect(squad.wallet.quoteBalance).toBe(990);
@@ -170,12 +170,12 @@ describe("Squad playing short", () => {
     squad.next(dataPointShort3); // deploy soldier at 100, extract both soldiers at 80, exit price is 80
     expect(squad.wallet.quoteBalance).toBe(1040);
   });
-  it("restore the baseBalance of the wallet when soldier die", () => {
+  it("restore the quoteBalance of the wallet when soldier die", () => {
     squad.next(dataPointShort1); // deploy soldier at 100
     squad.next(dataPointShort2); // deploy soldier at 100, kill both soldiers at 110, stop loss price is 105
     expect(squad.wallet.quoteBalance).toBe(990);
   });
-  it("increases the collateral and shortBalance when it deploys, the baseBalance remains untouched", () => {
+  it("increases the collateral and shortBalance when it deploys, the quoteBalance remains untouched", () => {
     squad.next(dataPointShort1); //
     expect(squad.wallet.quoteBalance).toBe(1000);
     expect(squad.wallet.collateral).toBe(100);

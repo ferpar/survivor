@@ -2,10 +2,10 @@ import { Wallet } from "./Wallet";
 import { IWalletConfig } from "./Wallet.d";
 
 const walletConfig: IWalletConfig = {
-  baseCurrency: "USD",
-  quoteCurrency: "ETH",
-  baseAmount: 1000,
-  quoteAmount: 3.5,
+  quoteCurrency: "USD",
+  baseCurrency: "ETH",
+  quoteAmount: 1000,
+  baseAmount: 3.5,
 };
 
 let wallet: Wallet;

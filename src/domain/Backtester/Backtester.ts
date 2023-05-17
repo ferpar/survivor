@@ -23,10 +23,10 @@ export class Backtester implements IBacktester {
     this.marketData = rawMarketData;
     this.config = config;
     this.wallet = new Wallet({
-      baseAmount: initialWallet.baseAmount,
       quoteAmount: initialWallet.quoteAmount,
-      baseCurrency: initialWallet.baseCurrency,
+      baseAmount: initialWallet.baseAmount,
       quoteCurrency: initialWallet.quoteCurrency,
+      baseCurrency: initialWallet.baseCurrency,
     });
     this.squads = [];
   }

@@ -13,10 +13,10 @@ export class Wallet implements IWallet {
   ledger: any[];
 
   constructor({
-    baseCurrency = "USD",
-    quoteCurrency = "ETH",
-    baseAmount = 0,
-    quoteAmount = 0,
+    quoteCurrency: baseCurrency = "USD",
+    baseCurrency: quoteCurrency = "ETH",
+    quoteAmount: baseAmount = 0,
+    baseAmount: quoteAmount = 0,
   }: IWalletConfig) {
     this.quoteCurrency = baseCurrency;
     this.baseCurrency = quoteCurrency;

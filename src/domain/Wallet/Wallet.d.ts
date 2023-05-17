@@ -24,8 +24,8 @@ export interface IWallet {
 }
 
 export interface IWalletConfig {
-  baseCurrency: string;
   quoteCurrency: string;
-  baseAmount: number;
+  baseCurrency: string;
   quoteAmount: number;
+  baseAmount: number;
 }

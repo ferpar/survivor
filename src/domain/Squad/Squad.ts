@@ -4,7 +4,7 @@ import { Wallet } from "../Wallet/Wallet";
 import { IDataPoint } from "../../types/domain";
 import { ISquad, ISquadConfig } from "./Squad.d";
 import crypto from "crypto";
-import { StringColorFormat, faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 
 // takes care of deploying soldiers
 export class Squad implements ISquad {

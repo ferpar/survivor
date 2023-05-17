@@ -13,17 +13,17 @@ export class Wallet implements IWallet {
   ledger: any[];
 
   constructor({
-    quoteCurrency: baseCurrency = "USD",
-    baseCurrency: quoteCurrency = "ETH",
-    quoteAmount: baseAmount = 0,
-    baseAmount: quoteAmount = 0,
+    quoteCurrency = "USD",
+    baseCurrency = "ETH",
+    quoteAmount = 0,
+    baseAmount = 0,
   }: IWalletConfig) {
-    this.quoteCurrency = baseCurrency;
-    this.baseCurrency = quoteCurrency;
+    this.quoteCurrency = quoteCurrency;
+    this.baseCurrency = baseCurrency;
     this.balance = 0; // setting to zero while no transactions have been made (no price data)
     this.collateral = 0;
-    this.quoteBalance = baseAmount;
-    this.baseBalance = quoteAmount; // amount of quote currency held
+    this.quoteBalance = quoteAmount;
+    this.baseBalance = baseAmount; // amount of base currency held
     this.shortBalance = 0; // amount of quote currency shorted, needs to be covered (repaid)
     this.lastPrice = 0;
     this.transactions = [];

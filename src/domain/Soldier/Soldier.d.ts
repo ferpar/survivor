@@ -3,7 +3,7 @@ import { IDataPoint } from "../../types/domain";
 export interface ISoldier {
   id: string;
   name: string;
-  quoteAmount: number;
+  baseAmount: number;
   entryPrice: number;
   stopLoss: number;
   exitPrice: number;

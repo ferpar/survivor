@@ -6,7 +6,7 @@ import { faker } from "@faker-js/faker";
 export class Soldier implements ISoldier {
   id: string;
   name: string;
-  quoteAmount: number;
+  baseAmount: number; // this is the amount of the asset the soldier has
   entryPrice: number;
   stopLoss: number; // this is the price at which the soldier will die
   exitPrice: number; // this is the price at which the soldier will extract
@@ -15,7 +15,7 @@ export class Soldier implements ISoldier {
   extracted: boolean;
   extractedAt: Date | null;
   lifeSpan: number;
-  balance: number;
+  balance: number; // this is the amount of money (quote currency) the soldier has
   profitLoss: number;
 
   constructor({
@@ -26,7 +26,7 @@ export class Soldier implements ISoldier {
   }: ISoldierConfig) {
     this.id = crypto.randomUUID();
     this.name = faker.person.fullName({ sex: "male" });
-    this.quoteAmount = amount / entryPrice;
+    this.baseAmount = amount / entryPrice;
     this.entryPrice = entryPrice;
     this.stopLoss = entryPrice * (1 - stopLossPercent);
     this.exitPrice = entryPrice * (1 + exitPricePercent);
@@ -73,16 +73,16 @@ export class Soldier implements ISoldier {
   updateBalance(close: number) {
     if (this.alive && !this.extracted) {
       // if the soldier is continuing to fight
-      this.balance = this.quoteAmount * close;
-      this.profitLoss = this.quoteAmount * (close - this.entryPrice);
+      this.balance = this.baseAmount * close;
+      this.profitLoss = this.baseAmount * (close - this.entryPrice);
     } else {
       // if the soldier is dead or has extracted
       this.balance = this.alive
-        ? this.quoteAmount * this.exitPrice
-        : this.quoteAmount * this.stopLoss;
+        ? this.baseAmount * this.exitPrice
+        : this.baseAmount * this.stopLoss;
       this.profitLoss = this.alive
-        ? this.quoteAmount * (this.exitPrice - this.entryPrice)
-        : this.quoteAmount * (this.stopLoss - this.entryPrice);
+        ? this.baseAmount * (this.exitPrice - this.entryPrice)
+        : this.baseAmount * (this.stopLoss - this.entryPrice);
     }
   }
 }

@@ -72,7 +72,8 @@ export class Squad implements ISquad {
     const { close, date } = dataPoint;
     const deploymentPossible =
       this.soldiers.length < this.maxSoldiers &&
-      this.wallet.baseBalance - this.wallet.collateral > this.soldierInvestment;
+      this.wallet.quoteBalance - this.wallet.collateral >
+        this.soldierInvestment;
     // run the next simulation cycle
     if (deploymentPossible) {
       this.deploySoldier(dataPoint);

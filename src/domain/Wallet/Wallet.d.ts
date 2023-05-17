@@ -1,9 +1,9 @@
 export interface IWallet {
-  baseCurrency: string;
   quoteCurrency: string;
+  baseCurrency: string;
   balance: number;
-  baseBalance: number;
   quoteBalance: number;
+  baseBalance: number;
   collateral: number;
   shortBalance: number;
   lastPrice: number;

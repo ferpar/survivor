@@ -50,8 +50,8 @@ if (process.argv[2] === "margin-heatmap") {
         config: backtestResults?.config,
         wallet: {
           balance: backtestResults?.wallet?.balance,
-          baseBalance: backtestResults?.wallet?.baseBalance,
-          quoteBalance: backtestResults?.wallet?.quoteBalance,
+          baseBalance: backtestResults?.wallet?.quoteBalance,
+          quoteBalance: backtestResults?.wallet?.baseBalance,
         },
         soldiers: {
           soldiers: backtestResults.squads[0].soldiers.length,

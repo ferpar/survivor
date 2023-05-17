@@ -120,16 +120,16 @@ describe("Squad playing long", () => {
   it("increases the wallet when it extracts", () => {
     squad.next(dataPointLong1); // deploy soldier at 100
     squad.next(dataPointLong3); // deploy soldier at 100, extract both soldiers at 120, exit price is 120
-    expect(squad.wallet.baseBalance).toBe(1040);
+    expect(squad.wallet.quoteBalance).toBe(1040);
   });
   it("restore the baseBalance of the wallet when soldier die", () => {
     squad.next(dataPointLong1); // deploy soldier at 100
     squad.next(dataPointLong2); // deploy soldier at 100, kill both soldiers at 93, stop loss price is 95
-    expect(squad.wallet.baseBalance).toBe(990);
+    expect(squad.wallet.quoteBalance).toBe(990);
   });
   it("decreases the wallet when it deploys", () => {
     squad.next(dataPointLong1); //
-    expect(squad.wallet.baseBalance).toBe(900);
+    expect(squad.wallet.quoteBalance).toBe(900);
   });
 });
 
@@ -168,16 +168,16 @@ describe("Squad playing short", () => {
   it("increases the wallet when it extracts", () => {
     squad.next(dataPointShort1); // deploy soldier at 100
     squad.next(dataPointShort3); // deploy soldier at 100, extract both soldiers at 80, exit price is 80
-    expect(squad.wallet.baseBalance).toBe(1040);
+    expect(squad.wallet.quoteBalance).toBe(1040);
   });
   it("restore the baseBalance of the wallet when soldier die", () => {
     squad.next(dataPointShort1); // deploy soldier at 100
     squad.next(dataPointShort2); // deploy soldier at 100, kill both soldiers at 110, stop loss price is 105
-    expect(squad.wallet.baseBalance).toBe(990);
+    expect(squad.wallet.quoteBalance).toBe(990);
   });
   it("increases the collateral and shortBalance when it deploys, the baseBalance remains untouched", () => {
     squad.next(dataPointShort1); //
-    expect(squad.wallet.baseBalance).toBe(1000);
+    expect(squad.wallet.quoteBalance).toBe(1000);
     expect(squad.wallet.collateral).toBe(100);
     expect(squad.wallet.shortBalance).toBe(1);
   });

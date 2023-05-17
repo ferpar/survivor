@@ -18,16 +18,16 @@ describe("Wallet", () => {
     expect(wallet.balance).toEqual(0);
   });
   it("should have a base balance of 1000", () => {
-    expect(wallet.baseBalance).toEqual(1000);
+    expect(wallet.quoteBalance).toEqual(1000);
   });
   it("should have a quote balance of 0", () => {
-    expect(wallet.quoteBalance).toEqual(3.5);
+    expect(wallet.baseBalance).toEqual(3.5);
   });
   it("should have a base currency of USD", () => {
-    expect(wallet.baseCurrency).toEqual("USD");
+    expect(wallet.quoteCurrency).toEqual("USD");
   });
   it("should have a quote currency of ETH", () => {
-    expect(wallet.quoteCurrency).toEqual("ETH");
+    expect(wallet.baseCurrency).toEqual("ETH");
   });
   it("should have a balance of 1350 after spending 1000 USD on ETH at 100 USD per ETH", () => {
     wallet.buy(1000, 100, new Date());
@@ -39,11 +39,11 @@ describe("Wallet", () => {
   });
   it("should have a quoteBalance of 8.5 after buying 5 ETH at 100 USD each", () => {
     wallet.buy(500, 100, new Date());
-    expect(wallet.quoteBalance).toEqual(8.5);
+    expect(wallet.baseBalance).toEqual(8.5);
   });
   it("should have a baseBalance of 500 after buying 5 ETH at 100 USD each", () => {
     wallet.buy(500, 100, new Date());
-    expect(wallet.baseBalance).toEqual(500);
+    expect(wallet.quoteBalance).toEqual(500);
   });
   it("should have a balance of 1350 after buying 5 ETH at 100 USD each and then buying 5 ETH at 100 USD each", () => {
     wallet.buy(500, 100, new Date());
@@ -58,16 +58,16 @@ describe("Wallet", () => {
   });
   it("should have a baseBalance of 1100 after depositing 100 USD", () => {
     wallet.deposit(100, new Date());
-    expect(wallet.baseBalance).toEqual(1100);
+    expect(wallet.quoteBalance).toEqual(1100);
   });
   it("should have a baseBalance of 900 after withdrawing 100 USD", () => {
     wallet.withdraw(100, new Date());
-    expect(wallet.baseBalance).toEqual(900);
+    expect(wallet.quoteBalance).toEqual(900);
   });
   it("should have a baseBalance of 1200 after withdrawing 500 and depositing 700 USD", () => {
     wallet.withdraw(500, new Date());
     wallet.deposit(700, new Date());
-    expect(wallet.baseBalance).toEqual(1200);
+    expect(wallet.quoteBalance).toEqual(1200);
   });
   it("should have a balance of 1450 after buying 5 ETH at 100 USD each and then depositing 100 USD", () => {
     wallet.buy(500, 100, new Date());
@@ -75,9 +75,9 @@ describe("Wallet", () => {
     expect(wallet.balance).toEqual(1450);
   });
   it("should add no quoteBalance after a short sell of 5 ETH at 100 USD each", () => {
-    const priorBalance = wallet.quoteBalance;
+    const priorBalance = wallet.baseBalance;
     wallet.short(500, 100, new Date());
-    expect(wallet.quoteBalance).toEqual(priorBalance);
+    expect(wallet.baseBalance).toEqual(priorBalance);
   });
   it("should add 5 ETH to shortBalance after a short sell of 5 ETH at 100 USD each", () => {
     const priorBalance = wallet.shortBalance;
@@ -85,9 +85,9 @@ describe("Wallet", () => {
     expect(wallet.shortBalance).toEqual(priorBalance + 5);
   });
   it("should not modify the baseBalance after a short sell of 5 ETH at 100 USD each", () => {
-    const priorBalance = wallet.baseBalance;
+    const priorBalance = wallet.quoteBalance;
     wallet.short(500, 100, new Date());
-    expect(wallet.baseBalance).toEqual(priorBalance);
+    expect(wallet.quoteBalance).toEqual(priorBalance);
   });
   it("should have the same balance after a short sell of 5 ETH at 100 USD each", () => {
     wallet.init(100);
@@ -109,7 +109,7 @@ describe("Wallet", () => {
     wallet.short(500, 100, new Date());
     wallet.shortCover(500, 80, new Date(), 100);
     const profit = (500 * (100 - 80)) / 100;
-    const depreciation = wallet.quoteBalance * 20;
+    const depreciation = wallet.baseBalance * 20;
     expect(wallet.balance).toEqual(priorBalance + profit - depreciation);
   });
   it("should decrease the balance after a short sell of 5 ETH at 100 USD each, and a shortCover of 5 ETH at 105 USD each", () => {

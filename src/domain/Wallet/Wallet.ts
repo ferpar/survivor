@@ -1,11 +1,11 @@
 import { IWallet, IWalletConfig } from "./Wallet.d";
 
 export class Wallet implements IWallet {
-  baseCurrency: string;
   quoteCurrency: string;
+  baseCurrency: string;
   balance: number;
-  baseBalance: number;
   quoteBalance: number;
+  baseBalance: number;
   collateral: number;
   shortBalance: number;
   lastPrice: number;
@@ -18,12 +18,12 @@ export class Wallet implements IWallet {
     baseAmount = 0,
     quoteAmount = 0,
   }: IWalletConfig) {
-    this.baseCurrency = baseCurrency;
-    this.quoteCurrency = quoteCurrency;
+    this.quoteCurrency = baseCurrency;
+    this.baseCurrency = quoteCurrency;
     this.balance = 0; // setting to zero while no transactions have been made (no price data)
     this.collateral = 0;
-    this.baseBalance = baseAmount;
-    this.quoteBalance = quoteAmount; // amount of quote currency held
+    this.quoteBalance = baseAmount;
+    this.baseBalance = quoteAmount; // amount of quote currency held
     this.shortBalance = 0; // amount of quote currency shorted, needs to be covered (repaid)
     this.lastPrice = 0;
     this.transactions = [];
@@ -31,7 +31,7 @@ export class Wallet implements IWallet {
   }
 
   init(price: number) {
-    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.balance = this.quoteBalance + this.baseBalance * price;
     this.lastPrice = price;
     this.updateLedger(new Date(), price);
   }
@@ -39,18 +39,18 @@ export class Wallet implements IWallet {
   buy(baseAmount: number, price: number, date: Date) {
     // notice to use this we specify the baseAmount and price
     // normally we would expect to work with the quoteAmount
-    this.baseBalance -= baseAmount;
-    this.quoteBalance += baseAmount / price;
+    this.quoteBalance -= baseAmount;
+    this.baseBalance += baseAmount / price;
     this.transactions.push({ type: "buy", baseAmount, price, date });
 
-    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.balance = this.quoteBalance + this.baseBalance * price;
     this.lastPrice = price;
     this.updateLedger(date, price);
   }
 
   sell(baseAmount: number, price: number, date: Date, entryPrice: number) {
-    this.baseBalance += baseAmount;
-    this.quoteBalance -= baseAmount / price;
+    this.quoteBalance += baseAmount;
+    this.baseBalance -= baseAmount / price;
     this.transactions.push({
       type: "sell",
       baseAmount,
@@ -59,7 +59,7 @@ export class Wallet implements IWallet {
       date,
     });
 
-    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.balance = this.quoteBalance + this.baseBalance * price;
     this.lastPrice = price;
     this.updateLedger(date, price);
   }
@@ -77,7 +77,7 @@ export class Wallet implements IWallet {
     this.shortBalance += baseAmount / price;
     this.transactions.push({ type: "short", baseAmount, price, date });
 
-    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.balance = this.quoteBalance + this.baseBalance * price;
     this.lastPrice = price;
     this.updateLedger(date, price);
   }
@@ -101,8 +101,8 @@ export class Wallet implements IWallet {
     // update short balance in quote currency (close out position)
     this.shortBalance -= baseAmount / entryPrice;
     // update baseBalance in base currency (add profit) and balance in base currency
-    this.baseBalance += profit;
-    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.quoteBalance += profit;
+    this.balance = this.quoteBalance + this.baseBalance * price;
 
     this.transactions.push({
       type: "shortCover",
@@ -112,7 +112,7 @@ export class Wallet implements IWallet {
       date,
     });
 
-    this.balance = this.baseBalance + this.quoteBalance * price;
+    this.balance = this.quoteBalance + this.baseBalance * price;
     this.lastPrice = price;
     this.updateLedger(date, price);
   }
@@ -120,7 +120,7 @@ export class Wallet implements IWallet {
   deposit(baseAmount: number, date: Date) {
     // deposit base currency
     this.balance += baseAmount;
-    this.baseBalance += baseAmount;
+    this.quoteBalance += baseAmount;
     this.transactions.push({ type: "deposit", baseAmount, date });
     this.updateLedger(date);
   }
@@ -128,11 +128,11 @@ export class Wallet implements IWallet {
   withdraw(baseAmount: number, date: Date) {
     // withdraw base currency
     this.balance -= baseAmount;
-    this.baseBalance -= baseAmount;
+    this.quoteBalance -= baseAmount;
     this.transactions.push({ type: "withdraw", baseAmount, date });
     this.ledger.push({
-      base: this.baseBalance,
-      quote: this.quoteBalance,
+      base: this.quoteBalance,
+      quote: this.baseBalance,
       price: null, // no price data
       balance: this.balance,
       date: date,
@@ -142,8 +142,8 @@ export class Wallet implements IWallet {
 
   updateLedger(date: Date, price?: number) {
     this.ledger.push({
-      base: this.baseBalance,
-      quote: this.quoteBalance,
+      base: this.quoteBalance,
+      quote: this.baseBalance,
       price: price ? price : null, // no price data
       balance: this.balance,
       date: date,

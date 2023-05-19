@@ -19,7 +19,7 @@ export class Soldier implements ISoldier {
   profitLoss: number;
 
   constructor({
-    amount,
+    amount, // amount invested in the soldier in quote currency
     entryPrice,
     stopLossPercent,
     exitPricePercent,

@@ -71,9 +71,9 @@ export class Wallet implements IWallet {
    * @returns {void}
    * */
   short(quoteAmount: number, price: number, date: Date): void {
-    // update collateral in base currency
+    // update collateral in quote currency
     this.collateral += quoteAmount;
-    // update short balance in quote currency
+    // update short balance in base currency
     this.shortBalance += quoteAmount / price;
     this.transactions.push({ type: "short", quoteAmount, price, date });
 
@@ -96,11 +96,11 @@ export class Wallet implements IWallet {
   ) {
     // calculate profit in base currency
     const profit = (quoteAmount * (entryPrice - price)) / entryPrice;
-    // update collateral in base currency (release collateral)
+    // update collateral in quote currency (release collateral)
     this.collateral -= quoteAmount; // -= entryPrice ??
-    // update short balance in quote currency (close out position)
+    // update short balance in base currency (close out position)
     this.shortBalance -= quoteAmount / entryPrice;
-    // update baseBalance in base currency (add profit) and balance in base currency
+    // update quoteBalance in quote currency (add profit) and balance in quote currency
     this.quoteBalance += profit;
     this.balance = this.quoteBalance + this.baseBalance * price;
 
@@ -118,7 +118,7 @@ export class Wallet implements IWallet {
   }
 
   deposit(quoteAmount: number, date: Date) {
-    // deposit base currency
+    // deposit quote currency
     this.balance += quoteAmount;
     this.quoteBalance += quoteAmount;
     this.transactions.push({ type: "deposit", quoteAmount, date });
@@ -126,7 +126,7 @@ export class Wallet implements IWallet {
   }
 
   withdraw(quoteAmount: number, date: Date) {
-    // withdraw base currency
+    // withdraw quote currency
     this.balance -= quoteAmount;
     this.quoteBalance -= quoteAmount;
     this.transactions.push({ type: "withdraw", quoteAmount, date });

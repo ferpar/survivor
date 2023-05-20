@@ -33,6 +33,8 @@ export type RawDataPointWithoutVolume = [
 export type RawDataPoint = RawDataPointWithVolume | RawDataPointWithoutVolume;
 
 interface IBacktestInputs {
+  symbol?: string;
+  period?: string;
   baseAmount?: number;
   startTimestamp: number;
   quoteAmount?: number;
@@ -45,6 +47,8 @@ interface IBacktestInputs {
 }
 
 interface IMarginHeatmapInputs {
+  symbol?: string;
+  period?: string;
   baseAmount?: number;
   startTimestamp: number;
   quoteAmount?: number;

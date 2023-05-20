@@ -11,6 +11,8 @@ import { coinAPIToArray } from "../helpers";
 const marketDataRawDefault = marketDataCoinAPI;
 
 export async function getMarginHeatmap({
+  symbol = "BINANCE_SPOT_BTC_USDT",
+  period = "1DAY",
   baseAmount = 1000,
   startTimestamp,
   quoteAmount = 0,
@@ -21,8 +23,7 @@ export async function getMarginHeatmap({
 }: IMarginHeatmapInputs) {
   // retrieve market data from db and put in marketDataRaw variable
   const marketDataRaw =
-    (await marketDb.getMarketData("BINANCE_SPOT_BTC_USDT", "1DAY")).rows ||
-    marketDataRawDefault;
+    (await marketDb.getMarketData(symbol, period)).rows || marketDataRawDefault;
   const marketData = coinAPIToArray(marketDataRaw);
 
   const marketDataSlice = marketData.filter((datapoint: RawDataPoint) => {

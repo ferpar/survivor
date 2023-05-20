@@ -1,5 +1,9 @@
 import express from "express";
-import { getBacktestResults, getMarginHeatmap } from "./controllers";
+import {
+  getBacktestResults,
+  getMarginHeatmap,
+  getMarkets,
+} from "./controllers";
 
 const app = express();
 
@@ -18,7 +22,14 @@ app.get("/", async (req: express.Request, res: express.Response) => {
   res.send("Hello World");
 });
 
+app.get("/markets", async (req: express.Request, res: express.Response) => {
+  const availableMarkets = await getMarkets();
+  res.json(availableMarkets);
+});
+
 app.get("/backtest", async (req: express.Request, res: express.Response) => {
+  const symbol = req.query.symbol;
+  const period = req.query.period;
   const stop = req.query.stop;
   const limit = req.query.limit;
   const startTimestamp = req.query.startTimestamp;
@@ -30,6 +41,8 @@ app.get("/backtest", async (req: express.Request, res: express.Response) => {
   const short = req.query.short;
 
   const testResults = await getBacktestResults({
+    symbol: symbol && String(symbol),
+    period: period && String(period),
     baseAmount: Number(baseAmount),
     quoteAmount: Number(quoteAmount),
     startTimestamp: Number(startTimestamp),
@@ -40,20 +53,15 @@ app.get("/backtest", async (req: express.Request, res: express.Response) => {
     amountPerSoldier: Number(amountPerSoldier),
     short: "false" === short ? false : true,
   });
-  // an example url to test this route:
-  /* http://localhost:3000/backtest
-    ?stop=0.9&limit=1.1&startTimestamp=1449446400000&
-    endTimestamp=1659225600000&baseAmount=1000&
-    quoteAmount=0&maxSoldiers=10&
-    amountPerSoldier=100&short=false */
 
   res.json(testResults);
 });
 
-// get endpoint for margin heatmap
 app.get(
   "/marginheatmap",
   async (req: express.Request, res: express.Response) => {
+    const symbol = req.query.symbol;
+    const period = req.query.period;
     const startTimestamp = req.query.startTimestamp;
     const endTimestamp = req.query.endTimestamp;
     const baseAmount = req.query.baseAmount;
@@ -63,6 +71,8 @@ app.get(
     const short = req.query.short;
 
     const marginHeatmap = await getMarginHeatmap({
+      symbol: symbol && String(symbol),
+      period: period && String(period),
       baseAmount: Number(baseAmount),
       quoteAmount: Number(quoteAmount),
       startTimestamp: Number(startTimestamp),
@@ -71,17 +81,11 @@ app.get(
       amountPerSoldier: Number(amountPerSoldier),
       short: short === "false" ? false : true,
     });
-    // an example url to test this route:
-    /* http://localhost:3000/marginheatmap
-    ?startTimestamp=1449446400000&endTimestamp=1659225600000&
-    baseAmount=1000&quoteAmount=0&maxSoldiers=10&
-    amountPerSoldier=100&short=false */
 
     res.json(marginHeatmap);
   }
 );
 
-// margin heatmap route
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });

@@ -10,9 +10,9 @@ const marketDataRawDefault = marketDataCoinAPI;
 export async function getBacktestResults({
   symbol = "BINANCE_SPOT_BTC_USDT",
   period = "1DAY",
-  baseAmount = 1000,
+  baseAmount = 0,
   startTimestamp,
-  quoteAmount = 0,
+  quoteAmount = 1000,
   endTimestamp,
   marginStop,
   marginLimit,
